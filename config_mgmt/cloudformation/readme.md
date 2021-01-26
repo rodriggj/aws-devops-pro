@@ -55,3 +55,16 @@
 3. You learned that there are ways to leverage reuse in resource deployment. The `.yaml` file can be `configuration controlled` into a `gold copy` that implements standards, best practice, reuse, etc. etc. in an automated way A benefit that doesn't exist in manual on-prem deployments. 
 
 4. You learned that WAF can be applied to the template. Tenants of Cost, Operational Effictivenss, Performance, Reliability, Security can all be found in implementing resources like this. 
+
+### How is this a benefit to our customers
+1. Speed to market. SCTG has and maintains CF templates for a variety of use cases. We can deploy edit/modify these templates as needed and deploy as fast as AWS can provision the resources. Typically a matter of hours. 
+
+2. Cost. We get cost visibility before we go to production. 
+
+3. Operations. If you have an MSP agreement, our SCTG resourecs are able to rollback and deploy resources via push button deployment. If you don't, the customer can execute push button deployment just as easily. The resources are documented via IaC files, there is opportunity for rollback and alerting if failures. 
+
+4. Performance. Testing of these configurations can quickly be spun up/down so optimizing performance can be quickly executed in dedicated phases. 
+
+5. Reliablity. Rollback, modification, eventing, alerting, all can be integrated into current monitoring and ops. 
+
+6. Security. CF allows for firewalls (security groups), Access Control Lists, and a variety of other security services to control ingress/egress and segmentation of networking to allow least privledge. 
