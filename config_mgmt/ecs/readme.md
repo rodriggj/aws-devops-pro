@@ -110,7 +110,7 @@ docker logs <image id>
 
 ## Lab 2: Task Definitions
 
-In lab 1 you were able to create an ECS cluster, and deploy an `ECS Agent` to an EC2 host. Now we need to configure a web server running Apache to a node on our cluster. How is this done? The first part of this process is we need to create a `Task Definition`. 
+In lab 1 you were able to create an ECS cluster, and deploy an `ECS Agent`to an EC2 host. Now we need to configure a web server running Apache to a node on our cluster. We will need to configure `PORT Mapping` and configuration to Docker Hub to pull the container image. How is this done? The first part of this process is we need to create a `Task Definition`. 
 
 #### Intended outcome 
 
