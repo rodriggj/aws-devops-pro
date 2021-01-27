@@ -163,9 +163,9 @@ When using ECS there are multiple parts to configure. A summary of all the piece
     - [ ] A UI "drawer" will slide out. 
         - `Container Name`: input `httpd`
         - `Image`: 
-            + Here recognize that the image is coming from Docker Hub. If you nav to Docker Hub [here](https://hub.docker.com/) and search for `httpd` you will find a Docker image [httpd](https://hub.docker.com/_/httpd). This is the image we want to specify in the ECS console. 
-            + The images are maintained via tagging, the most recent tag will be called `latest` by default. It is often the case that the latest images are not as stable as earlier revs, so for the sake of this example we will use tab `2.4` [here](https://hub.docker.com/layers/httpd/library/httpd/2.4/images/sha256-0936359fc51250267f4d9b8aef7dc238cae1078e478207ab7d6802416494a37e?context=explore)
-            + Return from Docker Hub to the ECS console / drawer and in the Image field enter `httpd:2.4`
+            - [ ] Here recognize that the image is coming from Docker Hub. If you nav to Docker Hub [here](https://hub.docker.com/) and search for `httpd` you will find a Docker image [httpd](https://hub.docker.com/_/httpd). This is the image we want to specify in the ECS console. 
+            - [ ] The images are maintained via tagging, the most recent tag will be called `latest` by default. It is often the case that the latest images are not as stable as earlier revs, so for the sake of this example we will use tab `2.4` [here](https://hub.docker.com/layers/httpd/library/httpd/2.4/images/sha256-0936359fc51250267f4d9b8aef7dc238cae1078e478207ab7d6802416494a37e?context=explore)
+            - [ ] Return from Docker Hub to the ECS console / drawer and in the Image field enter `httpd:2.4`
         - `Private Repository Authentication`: leave unchecked
         - `Memory Limit (MiB)`: Enter 300
         - `Port Mappings`: Host Port = `8080` & Container Port = `80` (see documentation on httpd image)
