@@ -162,5 +162,20 @@ When using ECS there are multiple parts to configure. A summary of all the piece
     - [ ] Click `Add Container`
     - [ ] A UI "drawer" will slide out. 
         - `Container Name`: input `httpd`
-        - `Image`: Here recognize that the image is coming from Docker Hub. If you nav to Docker Hub [here](https://hub.docker.com/) and search for `httpd` you will find a Docker image [httpd](https://hub.docker.com/_/httpd). This is the image we want to specify in the ECS console. The images are maintained via tagging, the most recent tag will be called `latest` by default. It is often the case that the latest images are not as stable as earlier revs, so for the sake of this example we will use tab `2.4` [here](https://hub.docker.com/layers/httpd/library/httpd/2.4/images/sha256-0936359fc51250267f4d9b8aef7dc238cae1078e478207ab7d6802416494a37e?context=explore)
-        - 
+        - `Image`: 
+            + Here recognize that the image is coming from Docker Hub. If you nav to Docker Hub [here](https://hub.docker.com/) and search for `httpd` you will find a Docker image [httpd](https://hub.docker.com/_/httpd). This is the image we want to specify in the ECS console. 
+            + The images are maintained via tagging, the most recent tag will be called `latest` by default. It is often the case that the latest images are not as stable as earlier revs, so for the sake of this example we will use tab `2.4` [here](https://hub.docker.com/layers/httpd/library/httpd/2.4/images/sha256-0936359fc51250267f4d9b8aef7dc238cae1078e478207ab7d6802416494a37e?context=explore)
+            + Return from Docker Hub to the ECS console / drawer and in the Image field enter `httpd:2.4`
+        - `Private Repository Authentication`: leave unchecked
+        - `Memory Limit (MiB)`: Enter 300
+        - `Port Mappings`: Host Port = `8080` & Container Port = `80` (see documentation on httpd image)
+    - [ ] Scroll past all additional config settings, leaving as default and click `Add`
+
+> NOTE: Within the UI drawer the are several additional configurations that can be modifified 1. Health Check 2. Environment 3. Container Timeouts 4. Network Settings 5. Storage and Loggin 6. Security 7. Resource Limits 8. Docker Labels. No need to worry about any of these additional configurations for this lab. 
+
+8. Upon configuration of the drawer items, you can see that the Container Definition was captured. 
+
+9. There are remaining configuration items within the Task Definition 1. Constraints, 2. Service Integration 3. Proxy Configuration 4. Log Router Integration 5. Volumes & 6. Tags. We will leave these as default for now as these are optional or beyond the scope of this lab. Click `Create`.
+
+10. When redirected, you will be presented with a status bar indiciating `Created Task Definition successfully`. You can see that the name for the Task Definition is `my-httpd:1` indicating the name and version number. 
+
