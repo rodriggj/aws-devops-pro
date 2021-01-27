@@ -44,7 +44,7 @@
 
 2. You learned that deployment of AWS resources always involves mulitple AWS services that are combined to execute a task. 
 
-    1. We used `AWS EC2` host
+    1. We used `AWS EC2` for our virtual host
     2. We used `AWS VPC` to provision Subnets and our Default Network configuration
     3. We used `AWS IAM` to provision roles and permissions
     4. We used an `AWS AMI` to provision a container optimized EC2 configuration
