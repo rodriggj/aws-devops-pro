@@ -14,7 +14,9 @@ When using ECS there are multiple parts to configure. A summary of all the piece
 
 ### Intended Outcome 
 
-The intend outcome of this lab is demonstrate how to complete an initial ECS cluster, and how various components of the AWS stack enable cluster creation. The outcome will look like this:
+The intend outcome of this lab is demonstrate how to complete an initial `ECS cluster`, and how various components of the AWS stack enable cluster creation. 
+
+`ECS Cluster` are logical groups of EC2 instances. They run an ECS Agent that registers the EC2 instance with a ECS cluster. The EC2 instance will utilize an optimized AMI specifically configured for use in ECS service. The general flow of all the piece parts that make up an ECS Cluster are depicted below. 
 
 ------
 ![image](https://user-images.githubusercontent.com/8760590/106005913-f1d87d80-6071-11eb-9777-9f02d7e47f1d.png)
@@ -124,6 +126,8 @@ docker logs <image id>
 
 In lab 1 you were able to create an ECS cluster, and deploy an `ECS Agent`to an EC2 host. Now we need to configure a web server running Apache to a node in our cluster. We will need to configure `PORT Mappings` and a pull from Docker Hub to obtain the container image. How is this done? The first part of this process is we need to create a `Task Definition`. 
 
+A `Task Defintion` is metadata presented in a JSON format that will tell ECS how to run a Docker Container. It contains criticial information such as 1. Docker Image 2. Port Binding 3. Provisions memory & cpu 4. Sets ENV variables, and 5. networking information.
+
 #### Intended outcome 
 
 ------- 
@@ -186,3 +190,18 @@ In lab 1 you were able to create an ECS cluster, and deploy an `ECS Agent`to an 
 
 10. When redirected, you will be presented with a status bar indiciating `Created Task Definition successfully`. You can see that the name for the Task Definition is `my-httpd:1` indicating the name and version number. 
 
+11. Lab complete. Congratulations!
+
+------ 
+
+### Lab 2 - What did you learn:
+
+------
+
+## Lab 3: Services
+
+
+
+### Steps: 
+
+1. 
