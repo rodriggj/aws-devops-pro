@@ -148,9 +148,11 @@ When using ECS there are multiple parts to configure. A summary of all the piece
 
     ------
     <p align="center">
-    <image src="https://user-images.githubusercontent.com/8760590/106028893-bf3a7f00-6089-11eb-9248-7a04be6dd20e.png" width="350px">
+    <image src="https://user-images.githubusercontent.com/8760590/106036667-de89da00-6092-11eb-9de1-325318b9cef0.png" width="350px">
     </p>
+
     ------
+
 
     - [ ] __Task Memory (MiB)__: Input `300`
     - [ ] __Task CPU (unit)__: Input `250` 
