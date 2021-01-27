@@ -1,6 +1,6 @@
-# Elastic Container Service
+# Elastic Container Service (ECS)
 
-## Lab 1: Create ECS Cluster
+## Lab 1: Create ECS Cluster 
 
 ### Steps: 
 1. Go to AWS console and nav to `ECS Service`
