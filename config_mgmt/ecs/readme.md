@@ -56,6 +56,7 @@ The intend outcome of this lab is demonstrate how to complete an initial ECS clu
 13. Review what you created by selecting the `cluster-demo` link. At the bottom of the dashboard you will see several tabs. Select `ECS Instances`. 
     + Here you see a `Container Instance` id, demonstrating that there is a Docker Image deployed to the EC2 instance (aka ECS Agent). The id is a hyperlink that will take you to the details of this container image. If you scroll right on the table you wlll also see `Agent Version` demonstrating the version of the container, and `Docker version` demonstrating the verision of the Docker client running on the EC2 host.
     + You can also see a `EC2 Instance` id, demonstrating that we used an EC2 AMI to create a virtual host that houses the docker image. This is also a hyperlink that will redirect to the EC2 service with details of the virtual host. If you scroll right on the table you can also see `CPU Available` & `Memory Available` on the virtual host.
+14. Lab complete. Congratulations!
 
 -----
 
@@ -109,15 +110,7 @@ docker logs <image id>
 
 ## Lab 2: Task Definitions
 
-When using ECS there are multiple parts to configure. A summary of all the piece parts are depicted here below. In lab 1 you were able to create an ECS cluster, and deploy an `ECS Agent` to an EC2 host. Now we need to configure an web server running Apache to a node on our cluster. How is this done? To do this we need to create a `Task Definition`. 
-
-------- 
-
-<p align="center">
-<image src="https://user-images.githubusercontent.com/8760590/106011291-901b1200-6077-11eb-9eb9-b6b3d875a4cd.png" width="450px">
-</p>
-
--------
+In lab 1 you were able to create an ECS cluster, and deploy an `ECS Agent` to an EC2 host. Now we need to configure a web server running Apache to a node on our cluster. How is this done? The first part of this process is we need to create a `Task Definition`. 
 
 #### Intended outcome 
 
