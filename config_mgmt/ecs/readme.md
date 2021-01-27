@@ -92,6 +92,7 @@ docker logs <image id>
 
 ### Lab 2: Task Definitions
 
-![image](https://user-images.githubusercontent.com/8760590/106011291-901b1200-6077-11eb-9eb9-b6b3d875a4cd.png)
-
+<p align="center">
+<image src="https://user-images.githubusercontent.com/8760590/106011291-901b1200-6077-11eb-9eb9-b6b3d875a4cd.png" width="350px">
+</p>
 -----
