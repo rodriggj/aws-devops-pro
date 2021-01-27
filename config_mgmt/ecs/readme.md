@@ -88,3 +88,10 @@ docker logs <image id>
 5. Reliablity. Rollback, modification, eventing, alerting, all can be integrated into current monitoring and ops. 
 
 6. Security. CF allows for firewalls (security groups), Access Control Lists, and a variety of other security services to control ingress/egress and segmentation of networking to allow least privledge. 
+
+
+### Lab 2: Task Definitions
+
+![image](https://user-images.githubusercontent.com/8760590/106011291-901b1200-6077-11eb-9eb9-b6b3d875a4cd.png)
+
+-----
