@@ -107,6 +107,8 @@ docker logs <image id>
 
 ## Lab 2: Task Definitions
 
+When using ECS there are multiple parts to configure. A summary of all the piece parts are depicted here below. In lab 1 you were able to create an ECS cluster, and deploy an `ECS Agent` to an EC2 host. Now we need to configure an web server running Apache to a node on our cluster. How is this done? To do this we need to create a `Task Definition`. 
+
 ------- 
 
 <p align="center">
@@ -115,5 +117,25 @@ docker logs <image id>
 
 -------
 
+#### Intended outcome 
+
+------- 
+
+<p align="center">
+<image src="https://user-images.githubusercontent.com/8760590/106028893-bf3a7f00-6089-11eb-9248-7a04be6dd20e.png" width="550px">
+</p>
+
+-------
+
 ### Steps: 
-1. 
+1. Nav to ECS Services on AWS console. Select ECS Cluster that we created in Lab 1, `demo-cluster`
+
+2. On the left nav pane, select `Task Definitions`, and select `Create New Task Definition`
+
+3. When redirected, you will be prompted to select `launch type`. There are 2 types of `launch type` options. For purposes of this lab we will select `EC2`, and click `Next Step`
+    - [ ] Fargate
+    - [ ] EC2
+
+4. When redirected, you will configure the `Task Definition`
+    - [ ] Provide the Task Definition a num
+
