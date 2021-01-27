@@ -126,14 +126,14 @@ docker logs <image id>
 
 In lab 1 you were able to create an ECS cluster, and deploy an `ECS Agent`to an EC2 host. Now we need to configure a web server running Apache to a node in our cluster. We will need to configure `PORT Mappings` and a pull from Docker Hub to obtain the container image. How is this done? The first part of this process is we need to create a `Task Definition`. 
 
-A `Task Defintion` is metadata presented in a JSON format that will tell ECS how to run a Docker Container. It contains criticial information such as 1. Docker Image 2. Port Binding 3. Provisions memory & cpu 4. Sets ENV variables, and 5. networking information.
+A `Task Defintion` is metadata presented in a JSON format that will tell ECS how to run a Docker Container. It contains criticial information such as 1. Docker Image 2. Port Binding 3. Provisions Memory & CPU 4. Sets ENV variables, and 5. networking information. In this lab we will 1. pull a `httpd` Docker image from Docker hub, 2. deploy the `httpd` container to our EC2 host 3. configure `PORT Mappings` from the EC2 host to the `httpd` container. 4. validate that the configuration is captured in a JSON document.
 
 #### Intended outcome 
 
 ------- 
 
 <p align="center">
-<image src="https://user-images.githubusercontent.com/8760590/106041261-cfa62600-6098-11eb-8154-1df69772a68c.png" width="550px">
+<image src="https://user-images.githubusercontent.com/8760590/106045881-c7e98000-609e-11eb-8e6f-f14b65dc4c54.png" width="550px">
 </p>
 
 -------
