@@ -16,7 +16,7 @@ When using ECS there are multiple parts to configure. A summary of all the piece
 
 The intend outcome of this lab is demonstrate how to complete an initial `ECS cluster`, and how various components of the AWS stack enable cluster creation. 
 
-`ECS Cluster` are logical groups of EC2 instances. They run an ECS Agent that registers the EC2 instance with a ECS cluster. The EC2 instance will utilize an optimized AMI specifically configured for use in ECS service. The general flow of all the piece parts that make up an ECS Cluster are depicted below. 
+`ECS Cluster` are logical groups of EC2 instances - the virtual hosts that will allocate resources to Container images operating on them. The EC2 instance will run an ECS Agent that registers the EC2 instance with a ECS cluster. The EC2 instance will utilize an optimized AMI specifically configured for use in ECS service. The general flow of all the piece parts that make up an ECS Cluster are depicted below. 
 
 ------
 ![image](https://user-images.githubusercontent.com/8760590/106005913-f1d87d80-6071-11eb-9777-9f02d7e47f1d.png)
