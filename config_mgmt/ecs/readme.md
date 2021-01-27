@@ -112,7 +112,7 @@ When using ECS there are multiple parts to configure. A summary of all the piece
 ------- 
 
 <p align="center">
-<image src="https://user-images.githubusercontent.com/8760590/106011291-901b1200-6077-11eb-9eb9-b6b3d875a4cd.png" width="550px">
+<image src="https://user-images.githubusercontent.com/8760590/106011291-901b1200-6077-11eb-9eb9-b6b3d875a4cd.png" width="450px">
 </p>
 
 -------
