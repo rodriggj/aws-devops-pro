@@ -41,7 +41,7 @@
 
 -----
 
-### What did you learn... 
+### What did you learn:
 
 ![image](https://user-images.githubusercontent.com/8760590/106005913-f1d87d80-6071-11eb-9777-9f02d7e47f1d.png)
 
@@ -56,3 +56,15 @@
     5. We used `AWS CloudFormation` to create a IaC template to deploy AWS resources
     6. We have metrics enabled via `AWS CloudWatch` 
 
+### How is this a benefit to our customers:
+1. Speed to market. The ECS cluster utilize CloudFormation templates to deploy the appropriate resources based on the configuration you specify. These CF templates are IaC that can be version controlled and push-button deployed. 
+
+2. Cost. The resources within the cluster can be configured per workload to ensure that the resource allocation and sizing are the correct balance performance for you workload. The clusters are IaC and can be deployed to Autoscaling groups which support `scale-to-zero`.
+
+3. Operations. If you have an MSP agreement, our SCTG resourecs are able to rollback and deploy resources via push button deployment. If you don't, the customer can execute push button deployment just as easily. The resources are documented via IaC files, there is opportunity for rollback and alerting if failures. 
+
+4. Performance. Testing of these configurations can quickly be spun up/down so optimizing performance can be quickly executed in dedicated phases. 
+
+5. Reliablity. Rollback, modification, eventing, alerting, all can be integrated into current monitoring and ops. 
+
+6. Security. CF allows for firewalls (security groups), Access Control Lists, and a variety of other security services to control ingress/egress and segmentation of networking to allow least privledge. 
