@@ -36,3 +36,18 @@
     + __CloudFormation Stack__
 12. When these items all turn to green, you will be able to view the Cluster created. 
 
+-----
+
+### What did you learn... 
+
+1. You learned that `AWS ECS` is a managed service that can be used to create a cluster of EC2 hosts. Here we provisioned a cluster of 1 EC2 host, using a __container optimized__ AMI, configured the cluster to be deployed across 3 subnets within our VPC. We provisioned provisioned ephimerial storage, assigned an IAM policy and deployed an ECS Agent (aka Docker container). 
+
+2. You learned that deployment of AWS resources always involves mulitple AWS services that are combined to execute a task. 
+
+    1. We used `AWS EC2` host
+    2. We used `AWS VPC` to provision Subnets and our Default Network configuration
+    3. We used `AWS IAM` to provision roles and permissions
+    4. We used an `AWS AMI` to provision a container optimized EC2 configuration
+    5. We used `AWS CloudFormation` to create a IaC template to deploy AWS resources
+    6. We have metrics enabled via `AWS CloudWatch` 
+
