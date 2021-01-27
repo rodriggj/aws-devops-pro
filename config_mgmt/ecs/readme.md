@@ -56,6 +56,26 @@
     5. We used `AWS CloudFormation` to create a IaC template to deploy AWS resources
     6. We have metrics enabled via `AWS CloudWatch` 
 
+3. You learned that the CPU and RAM are shared across the agents deployed to the host. 
+4. You learned that when you register an EC2 instance with an ECS Cluster, the cluster automatically creates an autoscaling group that is multi-AZ.
+5. If you view the `AutoScaling`, you can see 1. that the Launch Configuration specifies the AMI, 2. IAM Instance Profile (Permissions), 3. the User Data maintains a config file that specifies the cluster allocation, 4. Monitoring is enabled 5. the ephimeral storage is mounted
+6. If you view the `EC2 dashboard` you can see that 1. a security group has been provisioned, 2. you can config the ingress/egress
+7. If you view the `IAM role`, you can see that 1. the Policy has been provioned
+8. You learend that you can ssh into the EC2 host utilizing your key-pair, and validate that 1. you are using an optimized AMI, 2. you can view you config file which will indicate to the AMI which ECS cluster to register to
+
+```bash
+cat /etc/ecs/ecs.config
+```
+9. Finally, you learned that the way that the agent knows what cluster to register to is via the Docker image, which is pulled straight from Docker hub, is reading the config file in the `etc` directory. You can see the docker image and associated logs by running the following commands. 
+
+```bash
+docker ps
+docker logs <image id>
+```
+
+![image](https://user-images.githubusercontent.com/8760590/106009982-349c5480-6076-11eb-81e6-253c36028fa3.png)
+-----
+
 ### How is this a benefit to our customers:
 1. Speed to market. The ECS cluster utilize CloudFormation templates to deploy the appropriate resources based on the configuration you specify. These CF templates are IaC that can be version controlled and push-button deployed. 
 
