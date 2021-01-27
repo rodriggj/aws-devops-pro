@@ -35,10 +35,15 @@
     + __ECS Instance IAM Policy__
     + __CloudFormation Stack__
 12. When these items all turn to green, you will be able to view the Cluster created. 
+13. Review what you created by selecting the `cluster-demo` link. At the bottom of the dashboard you will see several tabs. Select `ECS Instances`. 
+    + Here you see a `Container Instance` id, demonstrating that there is a Docker Image deployed to the EC2 instance (aka ECS Agent). The id is a hyperlink that will take you to the details of this container image. If you scroll right on the table you wlll also see `Agent Version` demonstrating the version of the container, and `Docker version` demonstrating the verision of the Docker client running on the EC2 host.
+    + You can also see a `EC2 Instance` id, demonstrating that we used an EC2 AMI to create a virtual host that houses the docker image. This is also a hyperlink that will redirect to the EC2 service with details of the virtual host. If you scroll right on the table you can also see `CPU Available` & `Memory Available` on the virtual host.
 
 -----
 
 ### What did you learn... 
+
+![image](https://user-images.githubusercontent.com/8760590/106005913-f1d87d80-6071-11eb-9777-9f02d7e47f1d.png)
 
 1. You learned that `AWS ECS` is a managed service that can be used to create a cluster of EC2 hosts. Here we provisioned a cluster of 1 EC2 host, using a __container optimized__ AMI, configured the cluster to be deployed across 3 subnets within our VPC. We provisioned provisioned ephimerial storage, assigned an IAM policy and deployed an ECS Agent (aka Docker container). 
 
