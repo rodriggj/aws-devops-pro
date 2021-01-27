@@ -122,7 +122,7 @@ When using ECS there are multiple parts to configure. A summary of all the piece
 ------- 
 
 <p align="center">
-<image src="https://user-images.githubusercontent.com/8760590/106028893-bf3a7f00-6089-11eb-9248-7a04be6dd20e.png" width="550px">
+<image src="https://user-images.githubusercontent.com/8760590/106041261-cfa62600-6098-11eb-8154-1df69772a68c.png" width="550px">
 </p>
 
 -------
