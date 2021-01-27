@@ -137,5 +137,29 @@ When using ECS there are multiple parts to configure. A summary of all the piece
     - [ ] EC2
 
 4. When redirected, you will configure the `Task Definition`
-    - [ ] Provide the Task Definition a num
+    - [ ] __Task Definition Name__: Provide the Task Definition a name. For our example write `my-httpd`
+    - [ ] __Task Role__: The container your are provisioning will need an IAM role assigned in order to interact with other AWS resources if necessary. For example write to S3 bucket, or trigger a lambda function, etc. In this example no role is needed so you can leave blank. But recognize this is often a source of troubleshooting... if no role was provisioned the resource cannot communicate with other AWS resources. 
+    - [ ] __Network Mode__: ECS wants to know how to start your container. If no input is provided then if Linux container, default will be Bridge mode, and if Windows container image, default will be NAT. Leave default for this demo. 
 
+5. Further down the `Task Defintion` configuration page, is the `Task Execution IAM role`
+    - [ ] Leave as default. Creation of the required `ecsTaskExecutionRole` will be handled for you, or you more than likely already provisioned this during Lab 1, with the ECS Cluster assignment tasks. 
+
+6. Further down the `Task Definition` configuration page, is the `Task Size`. Recall that when we provisioned the EC2 host, we assigned a EC2 type, `t2.micro`. This host has "X" CPU and "Y" Memory capacity, which we saw in the EC2 details when we provisioned the ECS cluster. (See diagram below). Some portion of the memory capacity was already allocated when we provisioned the `ECS Agent` to the EC2 host, which is why we see `983 MiB` vs. `1 GiB` that a `t2.micro` is initialized with. We will need to once again allocate some portion of CPU and Memory from the host to this `httpd` Task Definition, as the host resources are shared.
+
+    ------
+    <p align="center">
+    <image src="https://user-images.githubusercontent.com/8760590/106028893-bf3a7f00-6089-11eb-9248-7a04be6dd20e.png" width="350px">
+    </p>
+    ------
+
+    - [ ] __Task Memory (MiB)__: Input `300`
+    - [ ] __Task CPU (unit)__: Input `250` 
+
+> NOTE: We will explore how to make an assessment of CPU and Memory at later time, for sake of lab, simply input these values. 
+
+7. Further down the `Task Definition` configuration page, is the `Container Definition` section. 
+    - [ ] Click `Add Container`
+    - [ ] A UI "drawer" will slide out. 
+        - `Container Name`: input `httpd`
+        - `Image`: Here recognize that the image is coming from Docker Hub. If you nav to Docker Hub [here](https://hub.docker.com/) and search for `httpd` you will find a Docker image [httpd](https://hub.docker.com/_/httpd). This is the image we want to specify in the ECS console. The images are maintained via tagging, the most recent tag will be called `latest` by default. It is often the case that the latest images are not as stable as earlier revs, so for the sake of this example we will use tab `2.4` [here](https://hub.docker.com/layers/httpd/library/httpd/2.4/images/sha256-0936359fc51250267f4d9b8aef7dc238cae1078e478207ab7d6802416494a37e?context=explore)
+        - 
