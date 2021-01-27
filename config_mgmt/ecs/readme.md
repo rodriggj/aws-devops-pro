@@ -49,19 +49,34 @@
 
 2. You learned that deployment of AWS resources always involves mulitple AWS services that are combined to execute a task. 
 
-    1. We used `AWS EC2` for our virtual host
-    2. We used `AWS VPC` to provision Subnets and our Default Network configuration
-    3. We used `AWS IAM` to provision roles and permissions
-    4. We used an `AWS AMI` to provision a container optimized EC2 configuration
-    5. We used `AWS CloudFormation` to create a IaC template to deploy AWS resources
-    6. We have metrics enabled via `AWS CloudWatch` 
+    - [ ] We used `AWS EC2` for our virtual host
+    - [ ] We used `AWS VPC` to provision Subnets and our Default Network configuration
+    - [ ] We used `AWS IAM` to provision roles and permissions
+    - [ ] We used an `AWS AMI` to provision a container optimized EC2 configuration
+    - [ ] We used `AWS CloudFormation` to create a IaC template to deploy AWS resources
+    - [ ] We have metrics enabled via `AWS CloudWatch` 
 
 3. You learned that the CPU and RAM are shared across the agents deployed to the host. 
+
 4. You learned that when you register an EC2 instance with an ECS Cluster, the cluster automatically creates an autoscaling group that is multi-AZ.
-5. If you view the `AutoScaling`, you can see 1. that the Launch Configuration specifies the AMI, 2. IAM Instance Profile (Permissions), 3. the User Data maintains a config file that specifies the cluster allocation, 4. Monitoring is enabled 5. the ephimeral storage is mounted
-6. If you view the `EC2 dashboard` you can see that 1. a security group has been provisioned, 2. you can config the ingress/egress
-7. If you view the `IAM role`, you can see that 1. the Policy has been provioned
-8. You learend that you can ssh into the EC2 host utilizing your key-pair, and validate that 1. you are using an optimized AMI, 2. you can view you config file which will indicate to the AMI which ECS cluster to register to
+
+5. If you view the `AutoScaling`, you can see 
+    - [ ] That the Launch Configuration specifies the AMI, 
+    - [ ] IAM Instance Profile (Permissions), 
+    - [ ] The User Data maintains a config file that specifies the cluster allocation, 
+    - [ ] Monitoring is enabled 
+    - [ ] The ephimeral storage is mounted
+
+6. If you view the `EC2 dashboard` you can see that 
+    - [ ] A security group has been provisioned, 
+    - [ ] You can config the ingress/egress
+
+7. If you view the `IAM role`, you can see that 
+    - [ ] The Policy has been provioned
+
+8. You learend that you can ssh into the EC2 host utilizing your key-pair, and validate that 
+    - [ ] You are using an optimized AMI, 
+    - [ ] You can view you config file which will indicate to the AMI which ECS cluster to register too
 
 ```bash
 cat /etc/ecs/ecs.config
@@ -90,9 +105,15 @@ docker logs <image id>
 6. Security. CF allows for firewalls (security groups), Access Control Lists, and a variety of other security services to control ingress/egress and segmentation of networking to allow least privledge. 
 
 
-### Lab 2: Task Definitions
+## Lab 2: Task Definitions
+
+------- 
 
 <p align="center">
 <image src="https://user-images.githubusercontent.com/8760590/106011291-901b1200-6077-11eb-9eb9-b6b3d875a4cd.png" width="550px">
 </p>
------
+
+-------
+
+### Steps: 
+1. 
