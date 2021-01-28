@@ -332,3 +332,18 @@ We are now trying to communicate with the host via some `port 8080` and subquent
 </p>
 
 ------
+
+16. Now that we can get communiction to our `httpd` service, how do we address scaling. Can we add additional docker images to handle scaling concerns. Yes we can to add an additional instance of our `httpd` service complete the following: 
+    - [ ] Click `Tasks` tab from the ECS Cluster dashboard
+    - [ ] Click `Run new Task`
+    - [ ] For `Launch Type` select `EC2`
+    - [ ] For `Number of Tasks` increase the value from 1 to 2
+    - [ ] Click `Run Task`
+
+------
+
+<p align="center">
+<image src="https://user-images.githubusercontent.com/8760590/106190738-4e699480-6167-11eb-8069-156b9c5f66b8.png" width="650px">
+</p>
+
+------
