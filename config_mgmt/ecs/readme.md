@@ -280,4 +280,35 @@ docker ps
 
     ------
 
-12. He
+12. Now that we see the service is deployed, validated by both the AWS console, and on the EC2 instance itself. In theory we should be able to now reach the httpd service via the port mappting we configured. Recall in our Task Definition we configured our port mapping to be `8080:80` (host:container). So we should be able to send an `http` request to our host via port 8080 and see a response... correct? Let's try ... go to a browser and type in the URL path ... `3.219.233.224:8080` ... 
+
+    ------
+
+    <p align="center">
+    <image src="https://user-images.githubusercontent.com/8760590/106185325-e8c5da00-615f-11eb-8de1-3c9f81c75a19.png)" width="650px">
+    </p>
+
+    ------
+
+> RESULT: The page never resolves?! It simply hangs and ultimately the request times out. Why is that? 
+
+13. Recall from our Lab 1. That we configured our EC2 host to have a security group that only allows inbound traffic to communicate with the EC2 instance via `port 22 (SSH)`. We are now trying to communicate with the host via some `port 8080` and subquently ECS will forward the request from the host to the `httpd` service via the port mapping we set up in our `Task Definition` to `port 80`. 
+
+    ------
+
+    <p align="center">
+    <image src="https://user-images.githubusercontent.com/8760590/106185325-e8c5da00-615f-11eb-8de1-3c9f81c75a19.png)" width="650px">
+    </p>
+
+    ------
+
+14. So what is happening? Why can't we get to the `httpd` service? What is happening is we only opened `PORT 22` in our Security Group that is acting as a Firewall to our EC2 instance. We are now making a request over `PORT 8080`, and that port needs to be opened to allow ingress to our EC2 instance. 
+
+    ------
+
+    <p align="center">
+    <image src="https://user-images.githubusercontent.com/8760590/106187690-2e37d680-6163-11eb-8886-aff01ec85197.png)" width="650px">
+    </p>
+
+    ------
+
