@@ -200,8 +200,60 @@ A `Task Defintion` is metadata presented in a JSON format that will tell ECS how
 
 ## Lab 3: Services
 
+In Lab 1 you were able to create an ECS `Cluster`, in Lab 2 you were able to configure a `Task Definition` which effectively was a process to create a JSON manifest file that indiciated the configuration of the container you want to run in your `Cluster`. Now in Lab 3 we will configure a file that will tell ECS how many of the `Task Definition` instances that you want running in your cluster. This process is referred to as an `ECS Service`. 
 
+The `ECS Service` will ensure that the number of tasks desired is running across your fleet of EC2 instances in your ECS Cluster. The ECS Service can be linked to your load balancing resources (ELB, ALB, NLB) within your VPC. 
 
 ### Steps: 
 
-1. 
+1. Nav to the ECS Service on you AWS console, and nav to your Cluster `cluster-demo`. Select the hyperlink on `cluster-demo`.
+
+2. When redirected, Click the `Services` tab and click `Create`.
+
+3. When redirected, you will need to `Configure Service`
+    - [ ] __Launch Type__: Select `EC2`
+    - [ ] __Task Definition__: 
+        + `Family`: Should be poplulated
+        + `Revision`: Should be populated
+    - [ ] __Cluster__: Should be populated
+    - [ ] __Service Name__: Enter `httpd-service`
+    - [ ] __Service Type__: 
+        + Replica: If you select Replica, you need to provision the `Number of Tasks` field with the qty of Task Definitios to create. For the sake of this demo choose `Replica` and provision `1` in the `Number of Tasks` field
+        + Daemon: This is a background running process, and if selected, the `Number of Tasks` field auto populates to automatic
+    - [ ] __Minimum Healthy Percent__: Enter `0`
+    - [ ] __Maximum Percent__: Enter `200`
+    - [ ] __Deployments__: 
+        + `Rolling Update`: This is the legacy option. For the sake of this lab, leave this selected for now. 
+        + `Blue/green deployment`: This is a new feature powered by Code Deploy. 
+    - [ ] __Task Placement__: 
+        + `Placement Templates`: This dropdown provides selection options for how to distribute tasks on your ECS cluster. For the sake of this lab select, `AZ Balanced Spread`.
+    - [ ] __Tagging__: Here you can assign tags to the Service. For the sake of this lab, leave default, and click `Next`.
+
+4. Whe redirected, you will need to `Configure Network`
+    - [ ] `Load Balancing`: Here you can select your load balancing service to your cluster. For the purpose of this lab we will leave blank for now, but we will configure an ELB later.
+        + Elastic Load Balancer
+        + Network Load Balancer
+        + Application Load Balancer
+    - [ ] `App Mesh`: Here you can leverage a Network service AWS manages, but you will need to make your Service discoverable to enable `App Mesh` option. For the purpose fo this lab, we will leave this `unchecked` and not apply a Service Mesh. 
+    - [ ] `Service Discovery`: Within the ECS Cluster you can enable Service Discovery. We will leave off for purpose of this demo. 
+    - [ ] Click `Next Step`
+
+5. When redirected, you will be able to configure `Set Auto Scaling`. 
+    - [ ] You can either enable or disable autoscaling. The auto scaling is enabled via CloudWatch alarms. For purposes of this lab we will leave `disabled`.
+
+6. When redirected, you will be able to `Review` your configration. 
+    - [ ] Click `Create Service`
+
+7. When redirected, you will see a status bar indicating `Launch Status`. From this page you can see there is an integration available to `Code Pipeline` so you can integrate your CI/CD process directly to your `httpd` service. For purposes of this lab this is not needed.  Click `View Service`
+
+8. When redirected, you will be back at the ECS landing page, for the `httpd-service`. Here you can once again see a table of various views that will provide status of the `httpd` service deployed to your ECS cluster. 
+
+9. Now we can attempt to see our service running. If you view the ECS Cluster Dashboard page, and view the Status table you can see that the `Task Definition` for the __httpd__ `Service` is now __Running__. (See screenshot below)
+
+    ------
+
+    <p align="center">
+    <image src="https://user-images.githubusercontent.com/8760590/106181944-73580a80-615b-11eb-8b66-04340bfc6252.png" width="650px">
+    </p>
+
+    ------
