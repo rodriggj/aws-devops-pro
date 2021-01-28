@@ -378,12 +378,31 @@ Still only the Agent and the original service instance!?
 
 > NOTE: If you don't see the "Scale ECS Instances" button, go to the underlying Auto Scaling Group (in the EC2 console) and set the desired capacity in the ASG to `desired capacity` and `max capacity` to 2.
 
-Now we have a final configuration that looks like this. 
+
+We have now created a second EC2 Host, utilized our Task Definition to deploy our Containers, and enabled our `httpd` service
+
+------
+<p align="center">
+<image src="https://user-images.githubusercontent.com/8760590/106196207-609b0100-616e-11eb-8bf8-d18deed66053.png" width="650px">
+</p>
+------
+
+Now we have a final configuration that looks like this from a topology standpoint
 
 ------
 
 <p align="center">
 <image src="https://user-images.githubusercontent.com/8760590/106195587-94295b80-616d-11eb-910e-a2816986e9f3.png" width="650px">
+</p>
+
+------
+
+We can validate this topology by `ssh`-ing to our EC2 instances and validating that we have 2 like images on 2 seperate hosts. 
+
+------
+
+<p align="center">
+<image src="https://user-images.githubusercontent.com/8760590/106197244-b328ed00-616f-11eb-98ff-de5779f9dfba.png" width="650px">
 </p>
 
 ------
