@@ -72,56 +72,6 @@ The intend outcome of this lab is demonstrate how to complete an initial `ECS cl
 
 14. Lab complete. Congratulations!
 
------
-
-### Lab 1 - What did you learn:
-
-1. You learned that `AWS ECS` is a managed service that can be used to create a cluster of EC2 hosts. Here we provisioned a cluster of 1 EC2 host, using a __container optimized__ AMI, configured the cluster to be deployed across 3 subnets within our VPC. We provisioned provisioned ephimerial storage, assigned an IAM policy and deployed an ECS Agent (aka Docker container). 
-
-2. You learned that deployment of AWS resources always involves mulitple AWS services that are combined to execute a task. 
-
-    - [ ] We used `AWS EC2` for our virtual host
-    - [ ] We used `AWS VPC` to provision Subnets and our Default Network configuration
-    - [ ] We used `AWS IAM` to provision roles and permissions
-    - [ ] We used an `AWS AMI` to provision a container optimized EC2 configuration
-    - [ ] We used `AWS CloudFormation` to create a IaC template to deploy AWS resources
-    - [ ] We have metrics enabled via `AWS CloudWatch` 
-
-3. You learned that the CPU and RAM are shared across the agents deployed to the host. 
-
-4. You learned that when you register an EC2 instance with an ECS Cluster, the cluster automatically creates an autoscaling group that is multi-AZ.
-
-5. If you view the `AutoScaling`, you can see 
-    - [ ] That the Launch Configuration specifies the AMI, 
-    - [ ] IAM Instance Profile (Permissions), 
-    - [ ] The User Data maintains a config file that specifies the cluster allocation, 
-    - [ ] Monitoring is enabled 
-    - [ ] The ephimeral storage is mounted
-
-6. If you view the `EC2 dashboard` you can see that 
-    - [ ] A security group has been provisioned, 
-    - [ ] You can config the ingress/egress
-
-7. If you view the `IAM role`, you can see that 
-    - [ ] The Policy has been provioned
-
-8. You learend that you can ssh into the EC2 host utilizing your key-pair, and validate that 
-    - [ ] You are using an optimized AMI, 
-    - [ ] You can view you config file which will indicate to the AMI which ECS cluster to register too
-
-```bash
-cat /etc/ecs/ecs.config
-```
-9. Finally, you learned that the way that the agent knows what cluster to register to is via the Docker image, which is pulled straight from Docker hub, is reading the config file in the `etc` directory. You can see the docker image and associated logs by running the following commands. 
-
-```bash
-docker ps
-docker logs <image id>
-```
-
-![image](https://user-images.githubusercontent.com/8760590/106009982-349c5480-6076-11eb-81e6-253c36028fa3.png)
------
-
 ## Lab 2: Task Definitions
 
 In lab 1 you were able to create an ECS cluster, and deploy an `ECS Agent`to an EC2 host. Now we need to configure a web server running Apache to a node in our cluster. We will need to configure `PORT Mappings` and a pull from Docker Hub to obtain the container image. How is this done? The first part of this process is we need to create a `Task Definition`. 
@@ -420,3 +370,53 @@ Finally we can validate via the browser
 ------
 
 19. Lab 3 Complete. Congratulations. 
+
+------
+
+### What did you learn:
+
+1. You learned that `AWS ECS` is a managed service that can be used to create a cluster of EC2 hosts. Here we provisioned a cluster of 1 EC2 host, using a __container optimized__ AMI, configured the cluster to be deployed across 3 subnets within our VPC. We provisioned provisioned ephimerial storage, assigned an IAM policy and deployed an ECS Agent (aka Docker container). 
+
+2. You learned that deployment of AWS resources always involves mulitple AWS services that are combined to execute a task. 
+
+    - [ ] We used `AWS EC2` for our virtual host
+    - [ ] We used `AWS VPC` to provision Subnets and our Default Network configuration
+    - [ ] We used `AWS IAM` to provision roles and permissions
+    - [ ] We used an `AWS AMI` to provision a container optimized EC2 configuration
+    - [ ] We used `AWS CloudFormation` to create a IaC template to deploy AWS resources
+    - [ ] We have metrics enabled via `AWS CloudWatch` 
+
+3. You learned that the CPU and RAM are shared across the agents deployed to the host. 
+
+4. You learned that when you register an EC2 instance with an ECS Cluster, the cluster automatically creates an autoscaling group that is multi-AZ.
+
+5. If you view the `AutoScaling`, you can see 
+    - [ ] That the Launch Configuration specifies the AMI, 
+    - [ ] IAM Instance Profile (Permissions), 
+    - [ ] The User Data maintains a config file that specifies the cluster allocation, 
+    - [ ] Monitoring is enabled 
+    - [ ] The ephimeral storage is mounted
+
+6. If you view the `EC2 dashboard` you can see that 
+    - [ ] A security group has been provisioned, 
+    - [ ] You can config the ingress/egress
+
+7. If you view the `IAM role`, you can see that 
+    - [ ] The Policy has been provioned
+
+8. You learend that you can ssh into the EC2 host utilizing your key-pair, and validate that 
+    - [ ] You are using an optimized AMI, 
+    - [ ] You can view you config file which will indicate to the AMI which ECS cluster to register too
+
+```bash
+cat /etc/ecs/ecs.config
+```
+9. Finally, you learned that the way that the agent knows what cluster to register to is via the Docker image, which is pulled straight from Docker hub, is reading the config file in the `etc` directory. You can see the docker image and associated logs by running the following commands. 
+
+```bash
+docker ps
+docker logs <image id>
+```
+
+![image](https://user-images.githubusercontent.com/8760590/106009982-349c5480-6076-11eb-81e6-253c36028fa3.png)
+-----
