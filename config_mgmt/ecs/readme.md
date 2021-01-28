@@ -382,9 +382,11 @@ Still only the Agent and the original service instance!?
 We have now created a second EC2 Host, utilized our Task Definition to deploy our Containers, and enabled our `httpd` service
 
 ------
+
 <p align="center">
 <image src="https://user-images.githubusercontent.com/8760590/106196207-609b0100-616e-11eb-8bf8-d18deed66053.png" width="650px">
 </p>
+
 ------
 
 Now we have a final configuration that looks like this from a topology standpoint
