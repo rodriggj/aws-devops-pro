@@ -408,3 +408,15 @@ We can validate this topology by `ssh`-ing to our EC2 instances and validating t
 </p>
 
 ------
+
+Finally we can validate via the browser 
+
+------
+
+<p align="center">
+<image src="https://user-images.githubusercontent.com/8760590/106197857-685ba500-6170-11eb-8fff-c25af476509c.png" width="650px">
+</p>
+
+------
+
+19. Lab 3 Complete. Congratulations. 
