@@ -144,10 +144,6 @@ A `Task Defintion` is metadata presented in a JSON format that will tell ECS how
 
 ------ 
 
-### Lab 2 - What did you learn:
-
-------
-
 ## Lab 3: Services
 
 In Lab 1 you were able to create an ECS `Cluster`, in Lab 2 you were able to configure a `Task Definition` which effectively was a process to create a JSON manifest file that indiciated the configuration of the container you want to run in your `Cluster`. Now in Lab 3 we will configure a file that will tell ECS how many of the `Task Definition` instances that you want running in your cluster. This process is referred to as an `ECS Service`. 
