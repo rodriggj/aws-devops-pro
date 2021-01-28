@@ -285,7 +285,7 @@ docker ps
     ------
 
     <p align="center">
-    <image src="https://user-images.githubusercontent.com/8760590/106185325-e8c5da00-615f-11eb-8de1-3c9f81c75a19.png)" width="650px">
+    <image src="https://user-images.githubusercontent.com/8760590/106185325-e8c5da00-615f-11eb-8de1-3c9f81c75a19.png" width="650px">
     </p>
 
     ------
@@ -297,7 +297,7 @@ docker ps
     ------
 
     <p align="center">
-    <image src="https://user-images.githubusercontent.com/8760590/106185325-e8c5da00-615f-11eb-8de1-3c9f81c75a19.png)" width="650px">
+    <image src="https://user-images.githubusercontent.com/8760590/106185325-e8c5da00-615f-11eb-8de1-3c9f81c75a19.png" width="650px">
     </p>
 
     ------
@@ -307,7 +307,7 @@ docker ps
     ------
 
     <p align="center">
-    <image src="https://user-images.githubusercontent.com/8760590/106187690-2e37d680-6163-11eb-8886-aff01ec85197.png)" width="650px">
+    <image src="https://user-images.githubusercontent.com/8760590/106187690-2e37d680-6163-11eb-8886-aff01ec85197.png" width="650px">
     </p>
 
     ------
