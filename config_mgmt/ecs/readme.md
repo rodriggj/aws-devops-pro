@@ -323,3 +323,12 @@ We are now trying to communicate with the host via some `port 8080` and subquent
 
 ------
     
+15. Now give your `http` request another try. Pull up a browser, and type into the URL `http://3.219.233.224:8080/`
+
+------
+
+<p align="center">
+<image src="https://user-images.githubusercontent.com/8760590/106189941-2af21a00-6166-11eb-84d3-2dad50a48e2a.png" width="650px">
+</p>
+
+------
