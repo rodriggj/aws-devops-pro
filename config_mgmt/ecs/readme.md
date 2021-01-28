@@ -257,3 +257,27 @@ The `ECS Service` will ensure that the number of tasks desired is running across
     </p>
 
     ------
+
+10. So now lets `ssh` into our ECS Cluster (the EC2 host) and view the running containers. 1. On your laptop, nav to the directory location of your `key-pair`, 2. open a terminal window 3. execute the following command to ssh into your EC2 instance
+
+```bash
+ssh -i "us-east.pem" ec2-user@ec2-3-219-233-224.compute-1.amazonaws.com
+```
+
+11. Once connected to your EC2 instance run 
+
+```bash
+docker ps
+```
+
+- [ ] Here you should see a terminal output that looks like this ... where you can see 2 docker images running on your EC2 host. 
+
+    ------
+
+    <p align="center">
+    <image src="https://user-images.githubusercontent.com/8760590/106184215-77395c00-615e-11eb-82cc-d05bc15a77aa.png" width="650px">
+    </p>
+
+    ------
+
+12. He
