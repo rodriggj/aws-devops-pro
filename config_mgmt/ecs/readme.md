@@ -333,17 +333,40 @@ We are now trying to communicate with the host via some `port 8080` and subquent
 
 ------
 
-16. Now that we can get communiction to our `httpd` service, how do we address scaling. Can we add additional docker images to handle scaling concerns. Yes we can to add an additional instance of our `httpd` service complete the following: 
-    - [ ] Click `Tasks` tab from the ECS Cluster dashboard
-    - [ ] Click `Run new Task`
-    - [ ] For `Launch Type` select `EC2`
-    - [ ] For `Number of Tasks` increase the value from 1 to 2
-    - [ ] Click `Run Task`
+16. Now that we can get communiction to our `httpd` service, how do we address scaling. Can we add additional docker images to handle scaling concerns. The answer is definitley __yes__ we can scale the service. 
+    - [ ] Click `Clusters`
+    - [ ] Click `httpd-service`
+    - [ ] Click `Update`
+    - [ ] On `Number of Tasks` field increase the qty from 1 to 2
+    - [ ] Click `Next Step`
+    - [ ] Click `Next Step`
+    - [ ] Click `Next Step`
+    - [ ] Click `Update Service`
+    - [ ] Click `View Service`
+
+So now that we have another service running, we should see this on our host correct? Go see ...
+
+```bash
+docker ps
+```
 
 ------
 
 <p align="center">
-<image src="https://user-images.githubusercontent.com/8760590/106190738-4e699480-6167-11eb-8069-156b9c5f66b8.png" width="650px">
+<image src="https://user-images.githubusercontent.com/8760590/106192861-f8e2b700-6169-11eb-8a26-e8de292f6f63.png" width="650px">
 </p>
 
 ------
+
+Still only the Agent and the original service instance!? Why is this ... 
+
+17. So what happened? You __CANNOT__ have 2 services running on the same port. If you look at the Event log on your service you will see a similar message. So what do we need to do to ensure that ECS can manage the port mappings for our services so we can scale our service without running into PORT conflicts? 
+
+------
+
+<p align="center">
+<image src="https://user-images.githubusercontent.com/8760590/106193132-56770380-616a-11eb-9de9-6ee219453e61.png" width="650px">
+</p>
+
+------
+
