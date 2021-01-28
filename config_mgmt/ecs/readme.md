@@ -292,23 +292,15 @@ docker ps
 
 > RESULT: The page never resolves?! It simply hangs and ultimately the request times out. Why is that? 
 
-13. Recall from our Lab 1. That we configured our EC2 host to have a security group that only allows inbound traffic to communicate with the EC2 instance via `port 22 (SSH)`. We are now trying to communicate with the host via some `port 8080` and subquently ECS will forward the request from the host to the `httpd` service via the port mapping we set up in our `Task Definition` to `port 80`. 
+13. Recall from our Lab 1. That we configured our EC2 host to have a security group that only allows inbound traffic to communicate with the EC2 instance via `port 22 (SSH)`. 
 
-    ------
+We are now trying to communicate with the host via some `port 8080` and subquently ECS will forward the request from the host to the `httpd` service via the port mapping we set up in our `Task Definition` to `port 80`. But there is no PORT open on our Security Group for `8080`. Therefore our EC2 does not receive the request, and the browser hangs and ultimately timesout. 
 
-    <p align="center">
-    <image src="https://user-images.githubusercontent.com/8760590/106185325-e8c5da00-615f-11eb-8de1-3c9f81c75a19.png" width="650px">
-    </p>
+------
 
-    ------
+<p align="center">
+<image src="https://user-images.githubusercontent.com/8760590/106187690-2e37d680-6163-11eb-8886-aff01ec85197.png" width="650px">
+</p>
 
-14. So what is happening? Why can't we get to the `httpd` service? What is happening is we only opened `PORT 22` in our Security Group that is acting as a Firewall to our EC2 instance. We are now making a request over `PORT 8080`, and that port needs to be opened to allow ingress to our EC2 instance. 
-
-    ------
-
-    <p align="center">
-    <image src="https://user-images.githubusercontent.com/8760590/106187690-2e37d680-6163-11eb-8886-aff01ec85197.png" width="650px">
-    </p>
-
-    ------
+------
 
