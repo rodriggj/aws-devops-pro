@@ -358,9 +358,9 @@ docker ps
 
 ------
 
-Still only the Agent and the original service instance!? Why is this ... 
+Still only the Agent and the original service instance!? 
 
-17. So what happened? You __CANNOT__ have 2 services running on the same port. If you look at the Event log on your service you will see a similar message. So what do we need to do to ensure that ECS can manage the port mappings for our services so we can scale our service without running into PORT conflicts? 
+17. So what happened? You __CANNOT__ have 2 services running on the same port. If you look at the Event log on your service you will see a similar message. So what do we need to do to ensure that ECS can manage the port mappings for our services so we can scale our service without running into PORT conflicts? We can sale our EC2 instances. 
 
 ------
 
@@ -370,3 +370,20 @@ Still only the Agent and the original service instance!? Why is this ...
 
 ------
 
+> NOTE: This solution isn't ideal. We don't want to simply add virtual hosts to maintain a 1:1 mapping of service to host. In later labs we will resolve this via other techniques. For now, recognize that you can scale the EC2 instances and deploy a replica of our service via the Task Definition JSON file. 
+
+18. To increase the cluster execute the following: 
+    - [ ] Click `Clusters`
+    - [ ] Click `ECS Instances`
+
+> NOTE: If you don't see the "Scale ECS Instances" button, go to the underlying Auto Scaling Group (in the EC2 console) and set the desired capacity in the ASG to `desired capacity` and `max capacity` to 2.
+
+Now we have a final configuration that looks like this. 
+
+------
+
+<p align="center">
+<image src="https://user-images.githubusercontent.com/8760590/106195587-94295b80-616d-11eb-910e-a2816986e9f3.png" width="650px">
+</p>
+
+------
