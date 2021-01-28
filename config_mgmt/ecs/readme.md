@@ -304,3 +304,22 @@ We are now trying to communicate with the host via some `port 8080` and subquent
 
 ------
 
+14. To fix this, we need to open port 8080 to our EC2 host. 
+    - [ ] Nav to our EC2 Service on the AWS Console
+    - [ ] Select the Security Groups hyperlink on the left nav
+    - [ ] Select the security group associated with our ECS Cluster. Click `Edit Inbound Rules`
+    - [ ] When redirected, click `Add Rule`
+        + `Type`: Select `Custom TCP`
+        + `Port Range`: Type 8080
+        + `Source`: Anywhere, and click the `0.0.0.0/0`
+        + `Description` Type httpd
+        + Click `Save Rules`
+
+------
+
+<p align="center">
+<image src="https://user-images.githubusercontent.com/8760590/106189558-b6b77680-6165-11eb-8700-4e64e8143909.png" width="650px">
+</p>
+
+------
+    
