@@ -10,7 +10,15 @@ When using ECS there are multiple parts to configure. A summary of all the piece
 
 -------
 
-## Lab 1: Cluster 
+In order to explore these pieceparts, there are 4 labs below: 
+1. Lab 1: Cluster Creation
+2. Lab 2: Task Definition
+3. Lab 3: Service Creation
+4. Lab 4: Load Balancing
+
+------- 
+
+## Lab 1: Cluster Creation
 
 ### Intended Outcome 
 
@@ -144,7 +152,7 @@ A `Task Defintion` is metadata presented in a JSON format that will tell ECS how
 
 ------ 
 
-## Lab 3: Services
+## Lab 3: Service Creation
 
 In Lab 1 you were able to create an ECS `Cluster`, in Lab 2 you were able to configure a `Task Definition` which effectively was a process to create a JSON manifest file that indiciated the configuration of the container you want to run in your `Cluster`. Now in Lab 3 we will configure a file that will tell ECS how many of the `Task Definition` instances that you want running in your cluster. This process is referred to as an `ECS Service`. 
 
@@ -369,6 +377,12 @@ Finally we can validate via the browser
 
 ------
 
+### Lab 4 - Load Balancing
+
+
+
+------
+
 ### What did you learn:
 
 1. You learned that `AWS ECS` is a managed service that can be used to create a cluster of EC2 hosts. Here we provisioned a cluster of 1 EC2 host, using a __container optimized__ AMI, configured the cluster to be deployed across 3 subnets within our VPC. We provisioned provisioned ephimerial storage, assigned an IAM policy and deployed an ECS Agent (aka Docker container). 
@@ -416,3 +430,4 @@ docker logs <image id>
 
 ![image](https://user-images.githubusercontent.com/8760590/106009982-349c5480-6076-11eb-81e6-253c36028fa3.png)
 -----
+
