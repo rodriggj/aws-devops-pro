@@ -386,7 +386,7 @@ In this lab we will see that we do not need to specify host port definition in o
 ------
 
 <p align="center">
-<image src="https://user-images.githubusercontent.com/8760590/106269982-8534be80-61ea-11eb-9359-8beb52f58fd7.png" width="650px">
+<image src="https://user-images.githubusercontent.com/8760590/106270217-d93fa300-61ea-11eb-8dda-7f0b7c771fff.png" width="650px">
 </p>
 
 ------
