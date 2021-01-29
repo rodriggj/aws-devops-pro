@@ -379,6 +379,18 @@ Finally we can validate via the browser
 
 ### Lab 4 - Load Balancing
 
+In Lab 3, you saw that to address scale it is possible to add to the cluster an additional EC2 host, to the ECS cluster, and allow the ECS Service to use the AutoScaling policy to balance EC2 host deployment across Availability Zones. This netted in 2 EC2 hosts 1 in AZ 1a & 1 in Az 1b. This was required because our Task Definition specified a particular port mapping (8080:80) to route http traffic to our `httpd` contiainer. This is an inefficient use of EC2 instances. 
+
+In this lab we will see that we do not need to specify host port definition in our `Task Definition`. Instead we can use `Dynamic Port Mapping` that the ECS Service provides. By excluding a host PORT mapping that we bind to the container, and allow ECS to dynamically allocate a host port that binds to the container port, we overcome PORT conflicts and multiple containers can be provisioned on a single EC2 host. (see diagram below).
+
+------
+
+<p align="center">
+<image src="https://user-images.githubusercontent.com/8760590/106269562-e60fc700-61e9-11eb-8227-e043a3b0f333.png" width="650px">
+</p>
+
+------
+
 
 
 ------
