@@ -229,7 +229,7 @@ docker ps
     ------
 
     <p align="center">
-    <image src="https://user-images.githubusercontent.com/8760590/106184215-77395c00-615e-11eb-82cc-d05bc15a77aa.png" width="650px">
+    <image src="https://user-images.githubusercontent.com/8760590/106184215-77395c00-615e-11eb-82cc-d05bc15a77aa.png" width="450px">
     </p>
 
     ------
@@ -239,7 +239,7 @@ docker ps
     ------
 
     <p align="center">
-    <image src="https://user-images.githubusercontent.com/8760590/106185325-e8c5da00-615f-11eb-8de1-3c9f81c75a19.png" width="650px">
+    <image src="https://user-images.githubusercontent.com/8760590/106185325-e8c5da00-615f-11eb-8de1-3c9f81c75a19.png" width="450px">
     </p>
 
     ------
@@ -253,7 +253,7 @@ We are now trying to communicate with the host via some `port 8080` and subquent
 ------
 
 <p align="center">
-<image src="https://user-images.githubusercontent.com/8760590/106187690-2e37d680-6163-11eb-8886-aff01ec85197.png" width="650px">
+<image src="https://user-images.githubusercontent.com/8760590/106187690-2e37d680-6163-11eb-8886-aff01ec85197.png" width="450px">
 </p>
 
 ------
@@ -272,7 +272,7 @@ We are now trying to communicate with the host via some `port 8080` and subquent
 ------
 
 <p align="center">
-<image src="https://user-images.githubusercontent.com/8760590/106189558-b6b77680-6165-11eb-8700-4e64e8143909.png" width="650px">
+<image src="https://user-images.githubusercontent.com/8760590/106189558-b6b77680-6165-11eb-8700-4e64e8143909.png" width="450px">
 </p>
 
 ------
@@ -282,7 +282,7 @@ We are now trying to communicate with the host via some `port 8080` and subquent
 ------
 
 <p align="center">
-<image src="https://user-images.githubusercontent.com/8760590/106189941-2af21a00-6166-11eb-84d3-2dad50a48e2a.png" width="650px">
+<image src="https://user-images.githubusercontent.com/8760590/106189941-2af21a00-6166-11eb-84d3-2dad50a48e2a.png" width="450px">
 </p>
 
 ------
