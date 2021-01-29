@@ -307,7 +307,7 @@ docker ps
 ------
 
 <p align="center">
-<image src="https://user-images.githubusercontent.com/8760590/106192861-f8e2b700-6169-11eb-8a26-e8de292f6f63.png" width="650px">
+<image src="https://user-images.githubusercontent.com/8760590/106192861-f8e2b700-6169-11eb-8a26-e8de292f6f63.png" width="450px">
 </p>
 
 ------
@@ -319,7 +319,7 @@ Still only the Agent and the original service instance!?
 ------
 
 <p align="center">
-<image src="https://user-images.githubusercontent.com/8760590/106193132-56770380-616a-11eb-9de9-6ee219453e61.png" width="650px">
+<image src="https://user-images.githubusercontent.com/8760590/106193132-56770380-616a-11eb-9de9-6ee219453e61.png" width="450px">
 </p>
 
 ------
@@ -338,7 +338,7 @@ We have now created a second EC2 Host, utilized our Task Definition to deploy ou
 ------
 
 <p align="center">
-<image src="https://user-images.githubusercontent.com/8760590/106196207-609b0100-616e-11eb-8bf8-d18deed66053.png" width="650px">
+<image src="https://user-images.githubusercontent.com/8760590/106196207-609b0100-616e-11eb-8bf8-d18deed66053.png" width="450px">
 </p>
 
 ------
@@ -348,7 +348,7 @@ Now we have a final configuration that looks like this from a topology standpoin
 ------
 
 <p align="center">
-<image src="https://user-images.githubusercontent.com/8760590/106195587-94295b80-616d-11eb-910e-a2816986e9f3.png" width="650px">
+<image src="https://user-images.githubusercontent.com/8760590/106195587-94295b80-616d-11eb-910e-a2816986e9f3.png" width="450px">
 </p>
 
 ------
