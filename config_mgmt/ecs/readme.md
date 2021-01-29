@@ -117,7 +117,7 @@ A `Task Defintion` is metadata presented in a JSON format that will tell ECS how
 
     ------
     <p align="center">
-    <image src="https://user-images.githubusercontent.com/8760590/106036667-de89da00-6092-11eb-9de1-325318b9cef0.png" width="650px">
+    <image src="https://user-images.githubusercontent.com/8760590/106036667-de89da00-6092-11eb-9de1-325318b9cef0.png" width="450px">
     </p>
 
     ------
@@ -207,7 +207,7 @@ The `ECS Service` will ensure that the number of tasks desired is running across
     ------
 
     <p align="center">
-    <image src="https://user-images.githubusercontent.com/8760590/106181944-73580a80-615b-11eb-8b66-04340bfc6252.png" width="650px">
+    <image src="https://user-images.githubusercontent.com/8760590/106181944-73580a80-615b-11eb-8b66-04340bfc6252.png" width="450px">
     </p>
 
     ------
