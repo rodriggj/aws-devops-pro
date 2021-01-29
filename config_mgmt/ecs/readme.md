@@ -390,7 +390,7 @@ In this lab we will see that we do not need to specify host port definition in o
 ------
 
 <p align="center">
-<image src="https://user-images.githubusercontent.com/8760590/106270217-d93fa300-61ea-11eb-8dda-7f0b7c771fff.png" width="450px">
+<image src="https://user-images.githubusercontent.com/8760590/106271293-7f3fdd00-61ec-11eb-9b13-b2821ffb8649.png" width="450px">
 </p>
 
 ------
