@@ -27,7 +27,11 @@ The intend outcome of this lab is demonstrate how to complete an initial `ECS cl
 `ECS Cluster` are logical groups of EC2 instances. They are the virtual hosts that will allocate resources to Container images operating on them. Because workloads may need multiple EC2 instances, there needs to be a way to associate EC2 instances into a group or `cluster`. How is this done? At creation, the EC2 instance is built with an optimized Amazon Machine Image (AMI) which at creation will instantiate a small Linux contianer, called the `ECS Agent` that registers the EC2 instance with a ECS Cluster. With multiple EC2s provisioned into an ECS Cluster, the cluster can be deployed to your Virtual Private Cloud (VPC) with all the standard components that are native to a VPC. To visualize this narrative see diagram below. 
 
 ------
-![image](https://user-images.githubusercontent.com/8760590/106005913-f1d87d80-6071-11eb-9777-9f02d7e47f1d.png)
+
+<p align="center">
+<image src="https://user-images.githubusercontent.com/8760590/106005913-f1d87d80-6071-11eb-9777-9f02d7e47f1d.png" width="450px">
+</p>
+
 ------
 
 ### Steps: 
