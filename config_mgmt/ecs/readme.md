@@ -358,7 +358,7 @@ We can validate this topology by `ssh`-ing to our EC2 instances and validating t
 ------
 
 <p align="center">
-<image src="https://user-images.githubusercontent.com/8760590/106197244-b328ed00-616f-11eb-98ff-de5779f9dfba.png" width="650px">
+<image src="https://user-images.githubusercontent.com/8760590/106197244-b328ed00-616f-11eb-98ff-de5779f9dfba.png" width="450px">
 </p>
 
 ------
@@ -368,7 +368,7 @@ Finally we can validate via the browser
 ------
 
 <p align="center">
-<image src="https://user-images.githubusercontent.com/8760590/106197857-685ba500-6170-11eb-8fff-c25af476509c.png" width="650px">
+<image src="https://user-images.githubusercontent.com/8760590/106197857-685ba500-6170-11eb-8fff-c25af476509c.png" width="450px">
 </p>
 
 ------
