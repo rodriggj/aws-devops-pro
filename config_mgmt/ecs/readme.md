@@ -91,7 +91,7 @@ A `Task Defintion` is metadata presented in a JSON format that will tell ECS how
 ------- 
 
 <p align="center">
-<image src="https://user-images.githubusercontent.com/8760590/106045881-c7e98000-609e-11eb-8e6f-f14b65dc4c54.png" width="850px">
+<image src="https://user-images.githubusercontent.com/8760590/106045881-c7e98000-609e-11eb-8e6f-f14b65dc4c54.png" width="450px">
 </p>
 
 -------
