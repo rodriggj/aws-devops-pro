@@ -389,13 +389,13 @@ In this lab we will see that we do not need to specify host port definition in o
 
 We will solve this problem in 3 steps: 
 1. Configure our Service to allow for dynamic port mapping
-2. We will open a security group to allow ingress to our EC2 host on a port range, since they will now be dynamically allocated
-3. We will load balance the inbound traffic across all the Services we have running
+2. We will configure an `Application Load Balancer` with a Security Group to allow dynamic port mappings
+3. We will configure a `Security Group` around our EC2 that will allow for our ALB to submit traffic to the EC2 instance and forwarded to the Container
 
 ------
 
 <p align="center">
-<image src="https://user-images.githubusercontent.com/8760590/106364528-f65c9a80-62ec-11eb-804a-4115191d38a0.png" width="450px">
+<image src="https://user-images.githubusercontent.com/8760590/106364693-2e181200-62ee-11eb-9adb-f9b4035ed2a6.png" width="450px">
 </p>
 
 ------
@@ -456,8 +456,11 @@ We will solve this problem in 3 steps:
 
 #### Part 2: Configure the security group to account for dynamic port allocation
 
-13. So we've fixed part of our problem. We can now get multiple containers on a single EC2 host without the issue of port mapping conflicts. But the problem we now have is the user experience. The user is not going to know what port the container was mapped too, nor will we. Therefore we need to set up 2 more things 
-    1. We need to configure a security group that will allow ingress http traffic from/to a dynamic port range
-    2. We need to load balance the inbound traffic to the 4 instances we have running
+So we've fixed part of our problem. We can now get multiple containers on a single EC2 host without the issue of port mapping conflicts. But the problem we now have is the user experience. The user is not going to know what port the container was mapped too, nor will we. 
+
+We need to configure our Security Group to allow for the dynamic port mapping, and allow TCP traffic to flow across a range of IP addresses that can communicate with our EC2 hosts, which will then forward traffic to the containers running our httpd service. 
+
+1. Nav to the 
+
 
 #### Part 3: Load balance inbound requests to the httpd service
