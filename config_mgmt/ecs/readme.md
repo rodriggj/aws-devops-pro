@@ -462,3 +462,11 @@ So we've fixed part of our problem. We can now get multiple containers on a sing
 
 
 #### Part 3: Load balance inbound requests to the httpd service
+
+------
+
+<p align="center">
+<image src="https://user-images.githubusercontent.com/8760590/106368401-79d6b580-6306-11eb-9af7-1472191ee6be.png" width="450px">
+</p>
+
+------
