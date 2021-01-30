@@ -395,7 +395,7 @@ We will solve this problem in 3 steps:
 ------
 
 <p align="center">
-<image src="https://user-images.githubusercontent.com/8760590/106363251-aa0d5c80-62e4-11eb-8eb6-63c89814f2c7.png" width="450px">
+<image src="https://user-images.githubusercontent.com/8760590/106364528-f65c9a80-62ec-11eb-804a-4115191d38a0.png" width="450px">
 </p>
 
 ------
