@@ -387,6 +387,11 @@ In Lab 3, you saw that to address scale it is possible to add to the cluster an 
 
 In this lab we will see that we do not need to specify host port definition in our `Task Definition`. Instead we can use `Dynamic Port Mapping` that the ECS Service provides. By excluding a host PORT mapping that we bind to the container, and allow ECS to dynamically allocate a host port that binds to the container port, we overcome PORT conflicts and multiple containers can be provisioned on a single EC2 host. (see diagram below).
 
+We will solve this problem in 3 steps: 
+1. Configure our Service to allow for dynamic port mapping
+2. We will open a security group to allow ingress to our EC2 host on a port range, since they will now be dynamically allocated
+3. We will load balance the inbound traffic across all the Services we have running
+
 ------
 
 <p align="center">
@@ -396,17 +401,17 @@ In this lab we will see that we do not need to specify host port definition in o
 ------
 
 ### Steps
+
+#### Part 1: Enable Dynamic Port Mappings
+
 1. Nav to AWS ECS Service
 2. Select you `Service` Tab, and select `httpd-service` service, select `Update`
-3. When redirected we change the `Number of Tasks` from 2 to 4. Click `Next Step`
-4. When redirected to `Configure Network` click `Next Step`
-5. When redirected to `Set Autoscaling` click `Next Step`
-6. When redirected to `Review` click `Update Service`
-7. On the `Deployments` tab we still only see 2 services deployed, and if we look on the `Events` tab we see why, we still have a port mapping confict. 
+3. When redirected we change the `Number of Tasks` from 2 to 4. Click `Next Step` x 3, and click `Update Service`
+4. On the `Deployments` tab we still only see 2 services deployed, and if we look on the `Events` tab we see why, we still have a port mapping confict. 
 
 > NOTE: If you view your `Deployment` Tab, see that there are still only 2 services running, not 4 as was just configured. You will recall this is b/c there is a port conflict. The `Task Definition` for the `httpd-service` is specifing a port mapping from the host to the container. Since only 1 port on the host can contain only 1 mapped container, we had to create a 2nd EC2 instance. But now we are trying to create 4 container instances on the 2 EC2 hosts. So AWS ECS is showing you in the deployment screen that it still will only deploy 2 services b/c of the port conflict issue. 
 
-8. To fix this we need to create a new Task Definition. 
+5. To fix this we need to create a new Task Definition. 
     - [ ] Click on `Task Definition`
     - [ ] Click on the existing task, `my-httpd`
     - [ ] Click `Create New Revision`
@@ -427,19 +432,19 @@ In this lab we will see that we do not need to specify host port definition in o
 
 ------
 
-9. We now need to update our `Service` to use this new `Task Definition`. 
+6. We now need to update our `Service` to use this new `Task Definition`. 
     - [ ] Click on `Clusters`, and click on `httpd-service`, and click `Update`
     - [ ] When redircted, find `Task Definition` and we will update the revision from 1 to 2 (latest). 
     - [ ] Click through all the redircted screens, with `Next Step`
     - [ ] Click `Update Service`, Click `View Service`
 
-10. Now you can see on the Deployment Tab, there are 2 deployments. 
+7. Now you can see on the Deployment Tab, there are 2 deployments. 
     1. The original deployment of 2 EC2 hosts with 1. an agent and 2. a httpd service container deployed, balance across 2 AZs. This is listed in the Deployment Tab as `Active`. 
     2. Here we have a new deployment. You can see that there are 0 `Running Count` of instances. This is referred to as the `Primary`. 
 
-11. As ECS quickly spins up the Service, you will see the `Active` deployment go away, as it is now replaced by the `Primary`. You can see that the 4 container instances have now been provisioned and are up and running. 
+8. As ECS quickly spins up the Service, you will see the `Active` deployment go away, as it is now replaced by the `Primary`. You can see that the 4 container instances have now been provisioned and are up and running. 
 
-12. If you `ssh` into the instances, you can now see 2 services running on your EC2 host, and you can see that the port mappings have been dynamically allocated. 
+9. If you `ssh` into the instances, you can now see 2 services running on your EC2 host, and you can see that the port mappings have been dynamically allocated. 
 
 ------
 
@@ -449,8 +454,18 @@ In this lab we will see that we do not need to specify host port definition in o
 
 ------
 
+#### Part 2: Configure the security group to account for dynamic port allocation
+
+13. So we've fixed part of our problem. We can now get multiple containers on a single EC2 host without the issue of port mapping conflicts. But the problem we now have is the user experience. The user is not going to know what port the container was mapped too, nor will we. Therefore we need to set up 2 more things 
+    1. We need to configure a security group that will allow ingress http traffic from/to a dynamic port range
+    2. We need to load balance the inbound traffic to the 4 instances we have running
 
 
+
+
+
+
+#### Part 3: Load balance inbound requests to the httpd service
 
 
 ### What did you learn:
