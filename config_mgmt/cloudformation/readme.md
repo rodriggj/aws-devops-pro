@@ -56,7 +56,7 @@
 
 4. You learned that WAF can be applied to the template. Tenants of Cost, Operational Effictivenss, Performance, Reliability, Security can all be found in implementing resources like this. 
 
-### How is this a benefit to our customers
+### How is this a benefit to our customers:
 1. Speed to market. SCTG has and maintains CF templates for a variety of use cases. We can deploy edit/modify these templates as needed and deploy as fast as AWS can provision the resources. Typically a matter of hours. 
 
 2. Cost. We get cost visibility before we go to production. 

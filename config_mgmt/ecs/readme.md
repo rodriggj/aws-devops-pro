@@ -395,6 +395,46 @@ In this lab we will see that we do not need to specify host port definition in o
 
 ------
 
+### Steps
+1. Nav to AWS ECS Service
+2. Select you `Service` Tab, and select `httpd-service` service, select `Update`
+3. When redirected we change the `Number of Tasks` from 2 to 4. Click `Next Step`
+4. When redirected to `Configure Network` click `Next Step`
+5. When redirected to `Set Autoscaling` click `Next Step`
+6. When redirected to `Review` click `Update Service`
+7. On the `Deployments` tab we still only see 2 services deployed, and if we look on the `Events` tab we see why, we still have a port mapping confict. 
+
+> NOTE: If you view your `Deployment` Tab, see that there are still only 2 services running, not 4 as was just configured. You will recall this is b/c there is a port conflict. The `Task Definition` for the `httpd-service` is specifing a port mapping from the host to the container. Since only 1 port on the host can contain only 1 mapped container, we had to create a 2nd EC2 instance. But now we are trying to create 4 container instances on the 2 EC2 hosts. So AWS ECS is showing you in the deployment screen that it still will only deploy 2 services b/c of the port conflict issue. 
+
+8. To fix this we need to create a new Task Definition. 
+    - [ ] Click on `Task Definition`
+    - [ ] Click on the existing task, `my-httpd`
+    - [ ] Click `Create New Revision`
+    - [ ] Leave all configuration items the same, __except for `Container Definition`__
+        + Click on `httpd`
+        + When the drawer renders, scroll down to `Port Mappings` and remove the host port reference to `8080`
+        + Click `Update` and the drawer should close.
+    - [ ] Scroll to bottom of `Task Definition` page and click `Create`. 
+    - [ ] When redirected you should see a green status bar indiciating a new verision of the `Task Definition` has been created successfully.
+
+> NOTE: If you view the json file for the Task definition you can see that the host port has not been specified for our Task Definition for `my-httpd:2`, whereas in Task Definition for `my-httpd:1`, we specified the host port as `8080`.
+
+------
+
+<p align="center">
+<image src="https://user-images.githubusercontent.com/8760590/106361127-81339a00-62d9-11eb-9501-667cd160c684.png" width="450px">
+</p>
+
+------
+
+9. 
+
+
+
+
+
+
+
 ### What did you learn:
 
 1. You learned that `AWS ECS` is a managed service that can be used to create a cluster of EC2 hosts. Here we provisioned a cluster of 1 EC2 host, using a __container optimized__ AMI, configured the cluster to be deployed across 3 subnets within our VPC. We provisioned provisioned ephimerial storage, assigned an IAM policy and deployed an ECS Agent (aka Docker container). 
@@ -442,4 +482,3 @@ docker logs <image id>
 
 ![image](https://user-images.githubusercontent.com/8760590/106009982-349c5480-6076-11eb-81e6-253c36028fa3.png)
 -----
-
