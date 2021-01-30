@@ -427,9 +427,27 @@ In this lab we will see that we do not need to specify host port definition in o
 
 ------
 
-9. 
+9. We now need to update our `Service` to use this new `Task Definition`. 
+    - [ ] Click on `Clusters`, and click on `httpd-service`, and click `Update`
+    - [ ] When redircted, find `Task Definition` and we will update the revision from 1 to 2 (latest). 
+    - [ ] Click through all the redircted screens, with `Next Step`
+    - [ ] Click `Update Service`, Click `View Service`
 
+10. Now you can see on the Deployment Tab, there are 2 deployments. 
+    1. The original deployment of 2 EC2 hosts with 1. an agent and 2. a httpd service container deployed, balance across 2 AZs. This is listed in the Deployment Tab as `Active`. 
+    2. Here we have a new deployment. You can see that there are 0 `Running Count` of instances. This is referred to as the `Primary`. 
 
+11. As ECS quickly spins up the Service, you will see the `Active` deployment go away, as it is now replaced by the `Primary`. You can see that the 4 container instances have now been provisioned and are up and running. 
+
+12. If you `ssh` into the instances, you can now see 2 services running on your EC2 host, and you can see that the port mappings have been dynamically allocated. 
+
+------
+
+<p align="center">
+<image src="https://user-images.githubusercontent.com/8760590/106362707-7e3ca780-62e1-11eb-9763-ab8cc6e8d578.png" width="450px">
+</p>
+
+------
 
 
 
