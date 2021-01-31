@@ -515,6 +515,14 @@ Fortunately we can take care of our port mappings by forwarding traffic to whate
 
 #### Part 3: Load balance inbound requests to the httpd service
 
+------
+
+<p align="center">
+<image src="https://user-images.githubusercontent.com/8760590/106391334-01c1cb80-63aa-11eb-9abd-467c87e3d219.png" width="450px">
+</p>
+
+------
+
 Now that a load balancer is available. We need to ensure that the `Security Group` assigned to __the Application Load Balancer__ can talk to the EC2 instance, and which will forward traffic to our `httpd` service in the container. To do this, we need to ensure that the security group on the EC2 allows inbound requests from the Load balancer. This is the same issue we had in Lab 3 Step 13. 
 
 1. Nav to the ECS service and select your cluster `my-cluster`.
