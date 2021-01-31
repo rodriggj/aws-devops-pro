@@ -461,7 +461,42 @@ Fortunately we can take care of our port mappings by forwarding traffic to whate
 
 > NOTE: There are 3 types of Load Balancers within the current AWS portfolio. 1. Classic Load Balancer 2. Application Load Balancer & 3. Network Load Balancer. You __must use__ an `Application Load Balancer` to complete the remaining steps. A `Classic Load Balancer` will only handle static ports, and a `Network Load Balancer` communicates at `Layer 4`. 
 
-1. 
+1. Nav to EC2, and on the left nav pane scroll down to `Load Balancers`. Select `Load Balancer`
+2. Click `Create Load Balancer`. When redirected select, `Application Load Balancer`. Click `Create`.
+3. Configure your Load Balancer 
+    - [ ] `Name`: Provide a name `httpd-alb`
+    - [ ] `Scheme`: Internet Facing
+    - [ ] `IP Address Type`: IPv4
+    - [ ] `Listeners`: 
+        + `Load Balancer Protocol`: HTTP
+        + `Load Balancer Port`: 80
+    - [ ] `Availability Zone`: 
+        + `VPC`: Select the vpc you deployed your ECS cluster too; `default-vpc`
+        + `Availability Zones`: Select AZ's you deployed your ECS cluster too; `us-east-1a`, `us-east-1b`, `us-east-1c`
+    - [ ] `Add On Services`: Leave blank (default). Click `Next: Configure Security Settings`
+4. Configure your Security Settings 
+    - [ ] Click `Next: Configure Security Groups`. 
+        + `Assign Security Group`: Click, `Create a New Security Group`
+        + Provid a Security Group Name: `WebApp-DMZ`
+        + Provide a Security Group Description: `WebApp-DMZ for ECS Cluster`
+    - [ ] Configure PORT configuration  
+        + `Type`: Select All TCP
+        + `Protocol`: Select TCP 
+        + `Port Range`: 0 - 65535 
+        + `Source`: Anywhere, and make sure that the IP range is 0.0.0.0/0, ::/0. Click `Next: Configure Routing`
+    - [ ] Configure Routing
+        + `Name`: httpd-alb
+        + `Target Type`: Select Instance
+        + `Protocol`: HTTP
+        + `Port`: 80
+        + `Protocol version`: HTTP1
+        + `Health Checks`
+            + `Protocol`: HTTP
+            + `Path`: / . Click `Next Register Target`
+5. Register Targets
+    - [ ] Select the EC2 instances that you want to add to the target group on port 80. Click `Next: Review`
+6. Review configuraton you provided. Click `Create`
+
 
 #### Part 3: Load balance inbound requests to the httpd service
 
