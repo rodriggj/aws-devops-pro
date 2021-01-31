@@ -464,6 +464,14 @@ We will solve this problem in 3 steps:
 
 #### Part 2: Configure an Application Load Balancer
 
+------
+
+<p align="center">
+<image src="https://user-images.githubusercontent.com/8760590/106390608-67ac5400-63a6-11eb-864e-bcbf7c251345.png" width="250px">
+</p>
+
+------
+
 So we've fixed part of our problem. We can now get multiple containers on a single EC2 host without the issue of port mapping conflicts. But as users we will not know what ports have been mapped. And until we provide our web application with DNS resolution we will need to specify a port or a DNS record that Amazon provides. 
 Fortunately we can take care of our port mappings by forwarding traffic to whatever target group and associated ports are there with an `Application Load Balancer`.
 
