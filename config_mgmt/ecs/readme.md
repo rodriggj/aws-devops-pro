@@ -407,7 +407,7 @@ We will solve this problem in 3 steps:
 ------
 
 <p align="center">
-<image src="https://user-images.githubusercontent.com/8760590/106390531-0be1cb00-63a6-11eb-8504-3b674e20f59e.png" width="450px">
+<image src="https://user-images.githubusercontent.com/8760590/106390531-0be1cb00-63a6-11eb-8504-3b674e20f59e.png" width="250px">
 </p>
 
 ------
