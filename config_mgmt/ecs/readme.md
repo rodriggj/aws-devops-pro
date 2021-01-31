@@ -395,7 +395,7 @@ We will solve this problem in 3 steps:
 ------
 
 <p align="center">
-<image src="https://user-images.githubusercontent.com/8760590/106366997-bd2c2680-62fc-11eb-8875-59ca4e4cc24b.png" width="450px">
+<image src="https://user-images.githubusercontent.com/8760590/106389413-6bd57300-63a0-11eb-9c88-86833d8dd6e1.png" width="450px">
 </p>
 
 ------
@@ -456,12 +456,16 @@ We will solve this problem in 3 steps:
 
 #### Part 2: Configure an Application Load Balancer
 
-So we've fixed part of our problem. We can now get multiple containers on a single EC2 host without the issue of port mapping conflicts. But the problem we now have is the user experience. The user is not going to know what port the container was mapped too, nor will we. We don't want to worry about the port mappings we simply want to forward traffic to whatever target group and associated ports are there. We can do this with an `Application Load Balancer`.
+So we've fixed part of our problem. We can now get multiple containers on a single EC2 host without the issue of port mapping conflicts. But as users we will not know what ports have been mapped. And until we provide our web application with DNS resolution we will need to specify a port or a DNS record that Amazon provides. 
+Fortunately we can take care of our port mappings by forwarding traffic to whatever target group and associated ports are there with an `Application Load Balancer`.
 
 > NOTE: There are 3 types of Load Balancers within the current AWS portfolio. 1. Classic Load Balancer 2. Application Load Balancer & 3. Network Load Balancer. You __must use__ an `Application Load Balancer` to complete the remaining steps. A `Classic Load Balancer` will only handle static ports, and a `Network Load Balancer` communicates at `Layer 4`. 
 
+1. 
 
 #### Part 3: Load balance inbound requests to the httpd service
+
+
 
 ------
 
