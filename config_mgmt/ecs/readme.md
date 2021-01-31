@@ -513,8 +513,29 @@ Fortunately we can take care of our port mappings by forwarding traffic to whate
     - [ ] Select the EC2 instances that you want to add to the target group on port 80. Click `Next: Review`
 6. Review configuraton you provided. Click `Create`
 
-
 #### Part 3: Load balance inbound requests to the httpd service
+
+Now that a load balancer is available. We need to ensure that the `Security Group` assigned to __the Application Load Balancer__ can talk to the EC2 instance, and which will forward traffic to our `httpd` service in the container. To do this, we need to ensure that the security group on the EC2 allows inbound requests from the Load balancer. This is the same issue we had in Lab 3 Step 13. 
+
+1. Nav to the ECS service and select your cluster `my-cluster`.
+2. Select the `ECS Instances` tab
+3. Select the `EC2` instance which will redirect to the EC2 service (you could have just navigated to the EC2 service if you knew your EC2 instance Id)
+4. On the left nav pane select Security Groups
+5. Select the `Security Group` applied to your ECS cluster `ecs-cluster`
+6. Click `Edit Inbound Rules`. 
+    + `Type`: All TCP
+    + `Protocol`: TCP
+    + `Port Range`: 0 - 65535
+    + `Source`: Custom, select __Security Group you created for the ALB__
+    + `Description`: Provide a description. Inbound rule to allow ALB to communicate with ECS cluster. Click `Save Rule`
+
+------
+
+<p align="center">
+<image src="https://user-images.githubusercontent.com/8760590/106391073-b78c1a80-63a8-11eb-9555-a26153edbb7c.png" width="450px">
+</p>
+
+------
 
 
 
