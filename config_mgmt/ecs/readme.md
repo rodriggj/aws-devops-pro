@@ -545,7 +545,9 @@ Now that a load balancer is available. We need to ensure that the `Security Grou
 
 ------
 
+Finally we can test to see if the loadbalancer is able to route traffic to our varierty of httpd instances. If you provide the DNS name to your ELB to a web browser you can see that the ALB is now 1. receiving the inbound request, 2. communicating with each of the EC2 instance that have been deployed to our cluster 3. the request is then routed to a container on the host. 
 
+You can see that the ALB is using a Round Robin distribution method by default to route traffic. Note the difference in the Host and the difference in the Container. 
 
 ------
 
