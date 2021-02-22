@@ -1,5 +1,27 @@
 # CloudFormation 
 
+## How CloudFormation Works 
+- Templates have to be uploaded in `S3` and then referenced in CloudFormation
+- To update a template, we can't edit previous ones. We have to re-upload a new version ot the template to AWS
+- Stacks are identified by name
+- Deleting a stack deltes every single artifcat that was created by CloudFormation
+
+### Deploying CloudFormation Templates
+- `Manual Way`
+    - [ ] Editing templates in the CloudFormation Designer
+    - [ ] Using the console to input parameters, etc
+
+- `Automated Way` 
+    - [ ] Editing templates in a `YAML` file
+    - [ ] Using the AWS CLI to deploy the templates
+    - [ ] Recommended way when you fully want to automate your flow
+
+### CloudFormation Building Blocks
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/8760590/108784161-faff2200-752b-11eb-938a-dc239f5c8ced.png" width=400 height=auto>
+</p>
+
 ## Lab 1: Create first cloud formation template
 ### Steps: 
 1. First lets build a simple `.yaml` file that will we upload to an S3 bucket that CloudFormation will use for the inital build. 
