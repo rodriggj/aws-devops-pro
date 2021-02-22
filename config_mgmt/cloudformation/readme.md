@@ -22,6 +22,12 @@
 <img src="https://user-images.githubusercontent.com/8760590/108784161-faff2200-752b-11eb-938a-dc239f5c8ced.png" width=600 height=auto>
 </p>
 
+### CloudFormation Designer
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/8760590/108784593-fd15b080-752c-11eb-9feb-c17cc80447e1.png" width=600 height=auto>
+</p>
+
 # Labs
 
 ## Lab 1: Create first cloud formation template
