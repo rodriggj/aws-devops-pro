@@ -21,8 +21,13 @@
 <p align="center">
 <img src="https://user-images.githubusercontent.com/8760590/108784161-faff2200-752b-11eb-938a-dc239f5c8ced.png" width=600 height=auto>
 </p>
+---------
+
+# Labs
+----------
 
 ## Lab 1: Create first cloud formation template
+
 ### Steps: 
 1. First lets build a simple `.yaml` file that will we upload to an S3 bucket that CloudFormation will use for the inital build. 
     + In a code editor create a file called `just_ec2.yaml` file.
