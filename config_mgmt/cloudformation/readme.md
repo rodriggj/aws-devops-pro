@@ -19,7 +19,7 @@
 ### CloudFormation Building Blocks
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/8760590/108784161-faff2200-752b-11eb-938a-dc239f5c8ced.png" width=400 height=auto>
+<img src="https://user-images.githubusercontent.com/8760590/108784161-faff2200-752b-11eb-938a-dc239f5c8ced.png" width=600 height=auto>
 </p>
 
 ## Lab 1: Create first cloud formation template
