@@ -39,32 +39,3 @@
 9. At the next redirect you are presented with S3 URL that the template is now hosted and a link for anticipted `cost`, which when clicked will take you to AWS `Simple Monthly Calculator`. You can evaluate any additional options listed in the template and finally click `Create`.
 10. The next redirect shows a dashboard for CloudFormation. You can see that the stack is now being created.
 11. Click through tabs to see what is avaialble via AWS to display the resulting output. View the implmentation on the EC2 tab, and in the `Cloud Formation Designer`. 
-
-### What did you learn: 
-1. You learned that deployments of infrastructure can be automated as Infrastructure as Code (IaC). In this case we created a `.yaml` file, that contains the configuration that Cloud Formation can read to create IaC. 
-
-> NOTE: There are other types of config file formats that will do the same thing as `.yaml`. Examples include Terraform, Ansible, Chef, etc. 
-
-2. You learned that deployment of AWS resources always involves mulitple AWS services that are combined to execute a task. 
-    1. `AWS S3` (hosts the config file) 
-    2. You saw `AWS EC2` (the deployed resource) 
-    3. You saw `AWS Cost Calculator` (shows the anticipated monthly cost) 
-    4. You saw `Cloud Formation` and `Designer` (shows the assets being deployed) 
-    5. You saw `AWS IAM` (Provisions roles and permissions to allow resources to be created) 
-
-3. You learned that there are ways to leverage reuse in resource deployment. The `.yaml` file can be `configuration controlled` into a `gold copy` that implements standards, best practice, reuse, etc. etc. in an automated way A benefit that doesn't exist in manual on-prem deployments. 
-
-4. You learned that WAF can be applied to the template. Tenants of Cost, Operational Effictivenss, Performance, Reliability, Security can all be found in implementing resources like this. 
-
-### How is this a benefit to our customers:
-1. Speed to market. SCTG has and maintains CF templates for a variety of use cases. We can deploy edit/modify these templates as needed and deploy as fast as AWS can provision the resources. Typically a matter of hours. 
-
-2. Cost. We get cost visibility before we go to production. 
-
-3. Operations. If you have an MSP agreement, our SCTG resourecs are able to rollback and deploy resources via push button deployment. If you don't, the customer can execute push button deployment just as easily. The resources are documented via IaC files, there is opportunity for rollback and alerting if failures. 
-
-4. Performance. Testing of these configurations can quickly be spun up/down so optimizing performance can be quickly executed in dedicated phases. 
-
-5. Reliablity. Rollback, modification, eventing, alerting, all can be integrated into current monitoring and ops. 
-
-6. Security. CF allows for firewalls (security groups), Access Control Lists, and a variety of other security services to control ingress/egress and segmentation of networking to allow least privledge. 
