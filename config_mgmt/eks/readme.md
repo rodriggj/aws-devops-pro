@@ -98,11 +98,6 @@ __AWS__
 
 --------
 
-### Reference
-
-- [ ] Kubernetes [here](https://kubernetes.io/docs/home/)
-- [ ] etcd [here](https://etcd.io/)
-
 ### Labs
 
 #### Lab 1: Setup IAM user and permissions to acces EKS resources
@@ -121,11 +116,9 @@ Steps:
 
 #### Lab 2: Setup commandline cli tools
 
-> `aws cli`: required as dependency of `eksctl` to grab authentication token (version 1.16.156 or greater). Pre-reqs `python` & `python pip`
-
-> `eksctl`: setup and operation of EKS cluster
-
-> `kubectl`: interaction with K8's API server
+ - `aws cli`: required as dependency of `eksctl` to grab authentication token. Pre-reqs `python` & `python pip`
+ - `eksctl`: setup and operation of EKS cluster
+ - `kubectl`: interaction with K8's API server
 
 Steps:
 1. Follow instructions here for `aws cli` [here](https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html)
@@ -162,3 +155,23 @@ kubectl version --client
 
 #### Lab 3: Create first EKS Cluster
 
+Here we will create an `EKS cluster` configured with the following specifications: 
+- [ ] Region: `us-east-1`
+- [ ] Nodegroup(s): 1
+- [ ] Worker Nodes: 3, `t2.small`
+- [ ] Port/Access: `ssh`
+- [ ] VPC/AZ: 1 VPC 2 Subnets across 2 AZ's
+
+Steps: 
+1. 
+
+
+-------
+
+### Reference
+
+- [ ] Kubernetes [here](https://kubernetes.io/docs/home/)
+- [ ] etcd [here](https://etcd.io/)
+- [ ] eksctl [here](https://eksctl.io/)
+
+-------
