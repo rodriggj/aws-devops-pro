@@ -90,10 +90,19 @@ __AWS__
 - [ ] Load Balancers
 - [ ] Security Groups
 
-
-
 ## What Does EKS do for the User? 
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/8760590/108799759-57733900-754e-11eb-965b-ec7e60a17657.png" width=600 height=auto>
 </p>
+
+--------
+
+### Labs
+
+#### Lab 1: Setup IAM user and permissions to acces EKS resources
+
+Steps:
+1. On AWS console nav to `IAM`
+2. Click on `Users`
+3. If no user exists, create one. If one does exist you want to use, ensure they are provisioned `AdministratorAccess` policy.
