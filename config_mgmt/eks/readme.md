@@ -173,12 +173,37 @@ eksctl create cluster --help
 
 2. To create the same EKS cluster we can alos source the build from an .YAML file. 
 
+```yaml
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata: 
+  name: EKS-Test
+  region: us-west-1
+
+nodeGroups: 
+  - name: ng-1
+    instanceType: t2.small
+    desiredCapacity: 3
+    ssh: #use same ssh key
+      publicKeyName: us-west-key
+```
+
+3. Once the .yaml file is created you can then run the file using `eksctl`.
+
 ```bash
-eksctl create cluster -f firstCluster.yaml
+eksctl create cluster -f testCluster2.yaml
 ```
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/8760590/108922411-5ac10000-75f4-11eb-9f2d-a4b961bc45d8.png" width=600 height=auto>
+</p>
+
+
+> NOTE: Once `eksctl` processes the command to `create cluster` your terminal will yield status of the build process. You can also view the status on the AWS Cloud Formation Service Console. If there is a failure in the build process the CloudFormation engine will execute a `Rollback` and delete any resources created during the build process. 
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/8760590/108922936-2437b500-75f5-11eb-9639-06e093497959.png" width=600 height=auto>
 </p>
 
 -------
