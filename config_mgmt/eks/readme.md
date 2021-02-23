@@ -98,6 +98,11 @@ __AWS__
 
 --------
 
+### Reference
+
+- [ ] Kubernetes [here](https://kubernetes.io/docs/home/)
+- [ ] etcd [here](https://etcd.io/)
+
 ### Labs
 
 #### Lab 1: Setup IAM user and permissions to acces EKS resources
@@ -106,3 +111,54 @@ Steps:
 1. On AWS console nav to `IAM`
 2. Click on `Users`
 3. If no user exists, create one. If one does exist you want to use, ensure they are provisioned `AdministratorAccess` policy.
+4. On IAM console click `Roles` \ `Create Role` \ `EKS` 
+5. Under `Select your use case` select `EKS` \ `Next: Permissions`
+6. Under `Policy name` leave the default policy `AmazonEKSServiceRolePolicy` \ `Next: Tags` 
+7. No need to add any Tags, select `Next: Review` \ Select `Create role`
+8. Ensure that you create a `key pair` out of the EC2 console. 
+
+------
+
+#### Lab 2: Setup commandline cli tools
+
+> `aws cli`: required as dependency of `eksctl` to grab authentication token (version 1.16.156 or greater). Pre-reqs `python` & `python pip`
+
+> `eksctl`: setup and operation of EKS cluster
+
+> `kubectl`: interaction with K8's API server
+
+Steps:
+1. Follow instructions here for `aws cli` [here](https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html)
+2. Configure your `aws profile` via the CLI 
+
+```bash
+aws configure
+```
+
+>  Provide the `Access Key ID`, `Access Secret`, `Region`, `Output format`. You can validate that the changes were correctly implemented by viewinging the `credentials` file located at `cd ~/.aws`.
+
+3. Download `eksctl` from _weaveworks_ github repository
+
+```bash
+curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+```
+
+4. Now we need to move from `/tmp` folder to `/usr/local/bin`
+
+```bash
+sudo mv /tmp/eksctl /usr/local/bin
+```
+
+> Validate that the `eksctl` client is installed by running `eksctl version` in the CLI and you should see a version returned.
+
+5. Now you want to install `kubectl`. See Mac OS installation [here](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+
+```bash 
+brew install kubectl
+kubectl version --client
+```
+
+-------
+
+#### Lab 3: Create first EKS Cluster
+
