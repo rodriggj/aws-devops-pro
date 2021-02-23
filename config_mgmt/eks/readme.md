@@ -67,11 +67,7 @@ __Kubernetes__
 
 14. A Kubernetes `Service` is an abstraction layer which defines a logical set of Pods and enables external traffic exposure, load balancing and service discovery for those Pods.
 
-15. Although each Pod has a unique IP address, those IPs are not exposed outside the cluster without a Service. Services allow your applications to receive traffic. Services can be exposed in different ways by specifying a type in the ServiceSpec:
-    1. ClusterIP
-    2. NodePort 
-    3. LoadBalancer
-    4. ExternalName
+15. Although each Pod has a unique IP address, those IPs are not exposed outside the cluster without a Service. Services allow your applications to receive traffic. Services can be exposed in different ways by specifying a type in the ServiceSpec: 1. ClusterIP, 2. NodePort, 3. LoadBalancer, & 4. ExternalName
 
 16. A Service routes traffic across a set of Pods. Discovery and routing among dependent Pods (such as the frontend and backend components in an application) is handled by Kubernetes Services.
 
