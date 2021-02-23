@@ -70,3 +70,6 @@
 9. At the next redirect you are presented with S3 URL that the template is now hosted and a link for anticipted `cost`, which when clicked will take you to AWS `Simple Monthly Calculator`. You can evaluate any additional options listed in the template and finally click `Create`.
 10. The next redirect shows a dashboard for CloudFormation. You can see that the stack is now being created.
 11. Click through tabs to see what is avaialble via AWS to display the resulting output. View the implmentation on the EC2 tab, and in the `Cloud Formation Designer`. 
+
+## Lab 2: Update and Delete Stack
+
