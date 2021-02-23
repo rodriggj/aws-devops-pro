@@ -57,6 +57,35 @@ __Kubernetes__
 
 ### Nodes 
 
+<p align="center">
+<img src="https://user-images.githubusercontent.com/8760590/108801980-64932680-7554-11eb-8ebd-94d6c565a320.png" width=300 height=auto>
+</p>
+
+13. Kubernetes Pods are mortal. Pods in fact have a lifecycle. When a worker node dies, the Pods running on the Node are also lost. A `ReplicaSet` might then dynamically drive the cluster back to desired state via creation of new Pods to keep your application running. 
+
+### Service
+
+14. A Kubernetes `Service` is an abstraction layer which defines a logical set of Pods and enables external traffic exposure, load balancing and service discovery for those Pods.
+
+15. Although each Pod has a unique IP address, those IPs are not exposed outside the cluster without a Service. Services allow your applications to receive traffic. Services can be exposed in different ways by specifying a type in the ServiceSpec:
+    1. ClusterIP
+    2. NodePort 
+    3. LoadBalancer
+    4. ExternalName
+
+16. A Service routes traffic across a set of Pods. Discovery and routing among dependent Pods (such as the frontend and backend components in an application) is handled by Kubernetes Services.
+
+17. Services match a set of Pods using labels and selectors, a grouping primitive that allows logical operation on objects in Kubernetes. 
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/8760590/108802344-4b3eaa00-7555-11eb-9dde-b109bc3ac2d3.png" width=300 height=auto>
+</p>
+
+### Scaling 
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/8760590/108802447-8b9e2800-7555-11eb-9644-285c947ef154.png" width=300 height=auto>
+</p>
 
 __AWS__
 - [ ] VPC, Subnets
