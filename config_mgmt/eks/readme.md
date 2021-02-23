@@ -163,8 +163,23 @@ Here we will create an `EKS cluster` configured with the following specification
 - [ ] VPC/AZ: 1 VPC 2 Subnets across 2 AZ's
 
 Steps: 
-1. 
+1. We can create an EKS cluster via the command line with the `eksctl` CLI. 
 
+```bash
+eksctl create cluster --help
+```
+
+> You can see all the flags and options available to you to create an EKS cluster via CLI. There is an alternative which is to create your EKS cluster via `YAML`
+
+2. To create the same EKS cluster we can alos source the build from an .YAML file. 
+
+```bash
+eksctl create cluster -f firstCluster.yaml
+```
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/8760590/108922411-5ac10000-75f4-11eb-9f2d-a4b961bc45d8.png" width=600 height=auto>
+</p>
 
 -------
 
