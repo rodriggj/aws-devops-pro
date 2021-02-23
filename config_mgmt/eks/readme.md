@@ -156,7 +156,7 @@ kubectl version --client
 #### Lab 3: Create first EKS Cluster
 
 Here we will create an `EKS cluster` configured with the following specifications: 
-- [ ] Region: `us-east-1`
+- [ ] Region: `us-west-1`
 - [ ] Nodegroup(s): 1
 - [ ] Worker Nodes: 3, `t2.small`
 - [ ] Port/Access: `ssh`
@@ -195,9 +195,20 @@ nodeGroups:
 eksctl create cluster -f testCluster2.yaml
 ```
 
+##### Terminal "view"
 <p align="center">
 <img src="https://user-images.githubusercontent.com/8760590/108922411-5ac10000-75f4-11eb-9f2d-a4b961bc45d8.png" width=600 height=auto>
 </p>
+
+##### AWS CloudFormation Console "view"
+<p align="center">
+<img src="https://user-images.githubusercontent.com/8760590/108923309-d1aac880-75f5-11eb-900e-10c19471792d.png" width=600 height=auto>
+</p>
+
+4. Although you don't necessarilly see the architecture from the AWS CloudFormation console or from the terminal session, the net resulting output from this 10-15min build process of the .yaml file is a topology that looks like this: 
+
+
+
 
 
 > NOTE: Once `eksctl` processes the command to `create cluster` your terminal will yield status of the build process. You can also view the status on the AWS Cloud Formation Service Console. If there is a failure in the build process the CloudFormation engine will execute a `Rollback` and delete any resources created during the build process. 
