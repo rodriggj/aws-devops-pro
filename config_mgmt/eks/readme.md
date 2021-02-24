@@ -367,6 +367,18 @@ eksctl create nodegroup --config-file=testCluster2.yaml --include='ng-mixedThird
 <img src="https://user-images.githubusercontent.com/8760590/109026078-969fa800-767c-11eb-90f4-e1c6b2c73791.png" width=600 height=auto>
 </p>
 
+If you navigate to the CF console you can see a new CF stack spinning up. Also if you move to the EC2 console, you can see the new resources being instantiated. 
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/8760590/109026243-c77fdd00-767c-11eb-895e-9de709ce5051.png" width=600 height=auto>
+</p>
+
+When the CF build is complete, your new environment view would look like this, where CF has spun up 1. a new `nodegroup`, 2. it populated the `nodegroup` with t2.small instances across 2 AZs, but if necessariy the YAML file will allow for t2.large instances to also be deployed. 
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/8760590/109026863-70c6d300-767d-11eb-89d0-ea2e40050543.png" width=600 height=auto>
+</p>
+
 -------
 
 ### Reference
