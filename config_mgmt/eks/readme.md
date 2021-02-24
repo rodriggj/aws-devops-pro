@@ -266,6 +266,30 @@ eksctl scale nodegroup --cluster=EKS-Test --nodes=5 --name=ng-1
 eksctl scale nodegroup --cluster=EKS-Test --nodes=5 --name=ng-1 --nodes-min=3 --nodes-max=5
 ```
 
+2. If you go back to the AWS EC2 console you can see that 2 additional EC2 Instances were added to the nodegroup that is distributed across the 2 avaiability zones. 
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/8760590/109014000-f98b4200-7670-11eb-98c6-ebc14dfe9847.png" width=600 height=auto>
+</p>
+
+or you can visualize in this view ... 
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/8760590/109014439-5f77c980-7671-11eb-8410-079bf6c13122.png" width=600 height=auto>
+</p>
+
+3. The same way we could scale out... we can also scale back down to say 3 nodes within our nodegroup
+
+```
+eksctl scale nodegroup --cluster=EKS-Test --nodes=3 --name=ng-1
+```
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/8760590/109015128-0e1c0a00-7672-11eb-8d65-2e5049c2a9c5.png" width=600 height=auto>
+</p>
+
+> NOTE: You can go back to the AWS console and in the EC2 console see the reduced number of EC2 instances. If you look at the CloudFormation console, you can see an update was processed and in the event logs see the scale down of the nodes in the nodegroup. 
+
 -------
 
 ### Reference
