@@ -11,3 +11,13 @@ nodeGroups:
     desiredCapacity: 3
     ssh: #use same ssh key
       publicKeyName: us-west
+  - name: ng-mixedThird
+    minSize: 3
+    maxSize: 5
+    instancesDistribution: 
+      maxPrice: 0.2
+      instanceTypes: ["t2.small", "t2.large"]
+      onDemandBaseCapacity: 0
+      onDemandPercentageAboveBaseCapacity: 50
+    ssh: 
+      publicKeyName: us-west

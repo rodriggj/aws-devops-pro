@@ -292,6 +292,83 @@ eksctl scale nodegroup --cluster=EKS-Test --nodes=3 --name=ng-1
 
 -------
 
+#### Lab 5: Add an Additional NodeGroup with Mixed Spot and On-Demand Instances
+
+Steps
+1. Suppose we want to create another Node Group with a mixture of Spot Instances and On-Demand instances. We would first create another .YAML file to capture the configuration we would want to deploy. 
+
+```yaml
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata: 
+  name: Mixed-NodeGroup
+  region: us-west-1
+
+nodeGroups: 
+  - name: ng-1
+    instanceType: t2.small
+    desiredCapacity: 3
+    ssh: 
+      publicKeyName: us-west
+  - name: ng-mixed
+    minSize: 3
+    maxSize: 5
+    instancesDistribution: 
+      maxPrice: 0.2
+      instanceTypes: ["t2.small", "t3.smalll"]
+      onDemandBaseCapacity: 0
+      onDemandPercentageAboveBaseCapacity: 50
+    ssh: 
+      publicKeyName: us-west
+```
+
+2. Then we would once again use `eksctl` to deploy to CloudFormation. We could deploy the entirely new cluster with the second node group to CF, but then we would have 2 VPCs and all associated resources. To do this we could deploy like before. 
+
+```
+eksctl create cluster -f mixedNodeGroup.yaml
+```
+
+Instead this time we are simply going to add a new NodeGroup to __the currently deployed cluster__. So we'll modify our initial YAML file as follows: 
+
+```yaml
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata: 
+  name: EKS-Test
+  region: us-west-1
+
+nodeGroups: 
+  - name: ng-1
+    instanceType: t2.small
+    desiredCapacity: 3
+    ssh: #use same ssh key
+      publicKeyName: us-west
+  - name: ng-mixedThird
+    minSize: 3
+    maxSize: 5
+    instancesDistribution: 
+      maxPrice: 0.2
+      instanceTypes: ["t2.small", "t2.large"]
+      onDemandBaseCapacity: 0
+      onDemandPercentageAboveBaseCapacity: 50
+    ssh: 
+      publicKeyName: us-west
+```
+
+And then we will deploy the change by simply adding the node group. 
+
+```
+eksctl create nodegroup --config-file=testCluster2.yaml --include='ng-mixedThird'
+```
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/8760590/109026078-969fa800-767c-11eb-90f4-e1c6b2c73791.png" width=600 height=auto>
+</p>
+
+-------
+
 ### Reference
 
 - [ ] Kubernetes [here](https://kubernetes.io/docs/home/)
