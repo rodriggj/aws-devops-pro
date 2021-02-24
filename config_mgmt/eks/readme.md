@@ -6,7 +6,6 @@
 <img src="https://user-images.githubusercontent.com/8760590/108800453-64912780-7550-11eb-9701-fe18c73419b4.png" width=600 height=auto>
 </p>
 
-
 ## Pre-reqs to working with EKS
 __Kubernetes__
 - [ ] Kubernetes API Server
@@ -208,7 +207,7 @@ eksctl create cluster -f testCluster2.yaml
 4. Although you don't necessarilly see the architecture from the AWS CloudFormation console or from the terminal session, the net resulting output from this 10-15min build process of the .yaml file is a topology that looks like this: 
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/8760590/108946360-81466180-761b-11eb-9c4d-19231d088a86.png" width=600 height=auto>
+<img src="https://user-images.githubusercontent.com/8760590/109013010-e4fa7a00-766f-11eb-831b-78241c7c6f78.png" width=600 height=auto>
 </p>
 
 5. You can view the nodes that were created by the `eksctl` 
@@ -251,7 +250,22 @@ eksctl get nodegroup --cluster EKS-Test
 #### Lab 4: Scale the Node Group
 
 Steps: 
-1. 
+1. What if we needed to manually scale the nodegroup up to 5 nodes vs 3 that we initialized the build with. For this we once again use the `eksctl` command
+
+```
+eksctl scale nodegroup --cluster=EKS-Test --nodes=5 --name=ng-1
+```
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/8760590/109013150-0b201a00-7670-11eb-82d2-a0a2e679c784.png" width=600 height=auto>
+</p>
+
+> NOTE: In the image above, you can see that there was an error thrown. _error: the desired nodes 5 is greater than current nodes-max/maxSize 3_. This is because in our .YAML template we specified a _desiredCapacity_ attribute of 3. If you receive this error you need to pass two (2) additional parameters to the `eksctl` command which are `--nodes-min=3` and `--nodes-max=5`. See updated `eksctl` command below.
+
+```
+eksctl scale nodegroup --cluster=EKS-Test --nodes=5 --name=ng-1 --nodes-min=3 --nodes-max=5
+```
+
 -------
 
 ### Reference

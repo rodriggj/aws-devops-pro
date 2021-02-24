@@ -10,4 +10,4 @@ nodeGroups:
     instanceType: t2.small
     desiredCapacity: 3
     ssh: #use same ssh key
-      publicKeyName: us-west-key
+      publicKeyName: us-west
