@@ -211,12 +211,47 @@ eksctl create cluster -f testCluster2.yaml
 <img src="https://user-images.githubusercontent.com/8760590/108946360-81466180-761b-11eb-9c4d-19231d088a86.png" width=600 height=auto>
 </p>
 
+5. You can view the nodes that were created by the `eksctl` 
+
+```
+kubectl get nodes
+```
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/8760590/108946968-c8812200-761c-11eb-929b-9b9d86510134.png" width=600 height=auto>
+</p>
+
+6. You can also see the Node Cluster 
+
+```
+eksctl get cluster 
+```
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/8760590/108947208-3fb6b600-761d-11eb-956e-d9f94653a5d9.png" width=600 height=auto>
+</p>
+
+7. You can also specify the `nodegroup`
+
+```
+eksctl get nodegroup --cluster EKS-Test
+```
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/8760590/108947401-9ae8a880-761d-11eb-8a09-1388ae073a91.png" width=600 height=auto>
+</p>
+
 > NOTE: Once `eksctl` processes the command to `create cluster` your terminal will yield status of the build process. You can also view the status on the AWS Cloud Formation Service Console. If there is a failure in the build process the CloudFormation engine will execute a `Rollback` and delete any resources created during the build process. 
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/8760590/108922936-2437b500-75f5-11eb-9639-06e093497959.png" width=600 height=auto>
 </p>
 
+
+#### Lab 4: Scale the Node Group
+
+Steps: 
+1. 
 -------
 
 ### Reference
