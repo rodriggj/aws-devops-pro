@@ -329,7 +329,7 @@ nodeGroups:
 eksctl create cluster -f mixedNodeGroup.yaml
 ```
 
-Instead this time we are simply going to add a new NodeGroup to __the currently deployed cluster__. So we'll modify our initial YAML file as follows: 
+3. Instead this time we are simply going to add a new NodeGroup to __the currently deployed cluster__. So we'll modify our initial YAML file as follows: 
 
 ```yaml
 apiVersion: eksctl.io/v1alpha5
@@ -357,7 +357,7 @@ nodeGroups:
       publicKeyName: us-west
 ```
 
-And then we will deploy the change by simply adding the node group. 
+And then we will deploy the change by simply adding the node group to existing environment.
 
 ```
 eksctl create nodegroup --config-file=testCluster2.yaml --include='ng-mixedThird'
